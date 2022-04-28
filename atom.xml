@@ -6,7 +6,7 @@
   <link href="http://raolixiang-up.github.io/atom.xml" rel="self"/>
   
   <link href="http://raolixiang-up.github.io/"/>
-  <updated>2022-04-28T17:54:18.196Z</updated>
+  <updated>2022-04-28T18:52:29.076Z</updated>
   <id>http://raolixiang-up.github.io/</id>
   
   <author>
@@ -17,13 +17,37 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>hexo个人博客-建立博客</title>
+    <title>hexo个人博客（002）-修改头像</title>
+    <link href="http://raolixiang-up.github.io/2022/04/29/hexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-%E9%9A%8F%E6%9C%BA%E5%A4%B4%E5%83%8F%E7%94%9F%E6%88%90/"/>
+    <id>http://raolixiang-up.github.io/2022/04/29/hexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-%E9%9A%8F%E6%9C%BA%E5%A4%B4%E5%83%8F%E7%94%9F%E6%88%90/</id>
+    <published>2022-04-28T17:55:59.000Z</published>
+    <updated>2022-04-28T18:52:29.076Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="更改头像"><a href="#更改头像" class="headerlink" title="更改头像"></a>更改头像</h2><p>~~~~~~##########################################标尺###############################################~~~~~~~</p><p>搭建完hexo博客，采用pure主题。配置pure主题只需要在站点配置文件（博客目录下的_config.yml）中把theme项更改为pure（在<br>hexo主目录下有pure文件夹）即可。其次，在git中进入themes/pure/_source下执行cp -r * ../../../source（将主题下的各<br>种分类标签复制到主目录下的source中，这样就不用自己建了），进入自己的主页还是很激动的，但是马上就很懵了，需要更改的东<br>西太多了。那就先从最简单的开始吧，先更改头像信息。这时又要用到万能的搜索了，流程如下：<br>（1）确定更改代码的位置<br>需要更改主题目录下配置文件_config.yml（简称主题配置文件）更改profile的模块就可以了（可以用文本编辑器搜索功能快速定位<br>相应位置）；<br>（2）确定具体代码<br>avatar控制头像，头像图片可以提供相对路径或者绝对路径（相关的可以自己搜索）。需要注意的是关键词后的冒号与后面的文本之间<br>必须有空格，提供图片相对路径或者绝对路径的方式不利于以后博客的使用，因此采用图床的方式进行图片上传；<br>（3）使用github和PicGo建立图床<br>这里就不细说了，详细教程见：<a href="https://raolixiang-up.github.io/2022/04/28/hexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">link</a><br>（4）上传图像<br>搭建完图床，使用PicGo将图片上传到github的库里，然后复制图片地址粘贴到avatar后，更新即可。通过更改头像，可以发现，基本<br>网站的修改就两个配置文件_config.yml：站点配置文件和主题配置文件，有啥需要更改的就文本编辑器打开配置文件看看吧</p><p>此外，为了得到好看的头像，发现了另一个新大陆，随机生成头像，把搜索到的相关网址总结如下：<br>（1）Multiavatar - Avatar Generator, Profile Picture Creator, Unique Avatars Maker：<a href="https://multiavatar.com/">link</a><br>（2）Avataaars Generator - A free online avatar generator for anyone to make their beautiful personal avatar easily!：<a href="https://getavataaars.com/?accessoriesType=Round&avatarStyle=Circle&clotheColor=Heather&clotheType=ShirtScoopNeck&eyeType=Happy&eyebrowType=DefaultNatural&facialHairColor=Platinum&facialHairType=MoustacheFancy&graphicType=Bat&hairColor=Blue&hatColor=PastelGreen&mouthType=Eating&skinColor=Pale&topType=LongHairNotTooLong">link</a><br>（3）头像生成器 - 在线工具专题 - 一个工具箱 - 好用的在线工具都在这里！：<a href="http://www.atoolbox.net/Topic.php?Id=4">link</a><br>（4）Notion 风格头像制作：<a href="https://notion-avatar.vercel.app/zh">link</a></p><h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p>[1] Hexo博客搭建(2)——主题配置 | 鴻塵：<a href="https://hwame.top/20200520/hello-hexo-configuration.html">link</a><br>[2] 免费稳定图床最佳实践：PicGo+GitHub+jsDeliver 极简教程 - 云+社区 - 腾讯云：<a href="https://cloud.tencent.com/developer/article/1793975?from=15425">link</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;更改头像&quot;&gt;&lt;a href=&quot;#更改头像&quot; class=&quot;headerlink&quot; title=&quot;更改头像&quot;&gt;&lt;/a&gt;更改头像&lt;/h2&gt;&lt;p&gt;~~~~~~##########################################标尺############</summary>
+      
+    
+    
+    
+    <category term="hexo博客" scheme="http://raolixiang-up.github.io/categories/hexo%E5%8D%9A%E5%AE%A2/"/>
+    
+    
+    <category term="hexo" scheme="http://raolixiang-up.github.io/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hexo个人博客（001）-建立博客</title>
     <link href="http://raolixiang-up.github.io/2022/04/28/hexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
     <id>http://raolixiang-up.github.io/2022/04/28/hexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</id>
     <published>2022-04-28T15:09:26.000Z</published>
-    <updated>2022-04-28T17:54:18.196Z</updated>
+    <updated>2022-04-28T18:45:33.755Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="搭建hexo博客流程"><a href="#搭建hexo博客流程" class="headerlink" title="搭建hexo博客流程"></a>搭建hexo博客流程</h2><p>小白一枚，一直想搭建一个自己保存自己学习工作生活记录的博客。得意于互联网的蓬勃发展，提供各种学习资料，如愿搭建了一个。<br>经验总结如下：</p><p>（1）资料搜索<br>确定目标之后，最重要的是搜集资料，确定关键词，我通过谷歌搜索，搜关键词“个人网站 搭建”、“免费网站 搭建”、“github 免费<br>网站”，很顺利找到很多相关个人网站搭建教程。其中，github的fork别人的主题也尝试过，对于我来说不是很好用，遂放弃。<br>（2）确定工具<br>根据模板主题以及后续修改难易程度，确定hexo+git的组合进行个人博客的搭建。<br>（3）搭建个人网站<br>一开始很难，因为啥也不懂，在很多细小的点上浪费很多时间。回头总结，别太关注细节，不用着急理解各种设置的细节，先把个人网<br>站搭起来再说。关键的代码一定去搜索它起到什么作用这样反而能够加快进度。<br>（4）成功搭建个人博客<br>搭建完个人博客，进行了简单的修改，这是我的第一个帖子。在这里，总结一下经验：善用搜索，理解主干，抓大放小。网上教程很多，<br>我就不重复写了，把教程放到参考资料里。前人栽树，后人乘凉，感谢大佬们的教程分享。</p><p>运行小细节：<br>    修改完配置或者要更新博客流程：<br>    在博客目录下（我的是hexo）使用git bash(hexo文件夹右键git bash，也可以先打开git bash使用cd进入)，然后执行下面<br>    <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo g -d</span><br></pre></td></tr></table></figure><br>更新会延迟一分钟左右~~~~~~</p><h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p>[1] 使用Github Pages与Hexo搭建博客 | jkzhao’s blog：<a href="https://jkzhao.github.io/2016/06/08/%E4%BD%BF%E7%94%A8Github-Pages%E4%B8%8EHexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">link</a><br>[2] Hexo教程：（一）安装及使用初体验 | 中二病也要玩 front end：<a href="https://lfkid.github.io/2016/11/16/Hexo%E6%95%99%E7%A8%8B%EF%BC%9A%EF%BC%88%E4%B8%80%EF%BC%89%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8%E5%88%9D%E4%BD%93%E9%AA%8C/">link</a><br>[3] 免费稳定图床最佳实践：PicGo+GitHub+jsDeliver 极简教程 - 云+社区 - 腾讯云<br>    <a href="https://cloud.tencent.com/developer/article/1793975?from=15425">link</a><br>[4] 使用Hexo+ Github 建站 时 使用 hexo d 命令异常：You should configure deployment settings in _config.yml first! Available deployer plugins: git For more help, you can check the online docs: <a href="https://hexo.io/">https://hexo.io/</a> - 无敌土豆 - 博客园：[link]<a href="https://www.cnblogs.com/imtudou/p/11205832.html">https://www.cnblogs.com/imtudou/p/11205832.html</a><br>[5] Hexo主题pure使用指南 | 非典型性程序员：<a href="https://blog.plcent.com/2019/11/05/hexo-theme-pure/index.html">link</a></p>]]></content>
+    <content type="html"><![CDATA[<h2 id="搭建hexo博客流程"><a href="#搭建hexo博客流程" class="headerlink" title="搭建hexo博客流程"></a>搭建hexo博客流程</h2><p>小白一枚，一直想搭建一个自己保存自己学习工作生活记录的博客。得意于互联网的蓬勃发展，提供各种学习资料，如愿搭建了一个。<br>经验总结如下：</p><p>（1）资料搜索<br>确定目标之后，最重要的是搜集资料，确定关键词，我通过谷歌搜索，搜关键词“个人网站 搭建”、“免费网站 搭建”、“github 免费<br>网站”，很顺利找到很多相关个人网站搭建教程。其中，github的fork别人的主题也尝试过，对于我来说不是很好用，遂放弃。<br>（2）确定工具<br>根据模板主题以及后续修改难易程度，确定hexo+git的组合进行个人博客的搭建。<br>（3）搭建个人网站<br>一开始很难，因为啥也不懂，在很多细小的点上浪费很多时间。回头总结，别太关注细节，不用着急理解各种设置的细节，先把个人网<br>站搭起来再说。关键的代码一定去搜索它起到什么作用这样反而能够加快进度。<br>（4）成功搭建个人博客<br>搭建完个人博客，进行了简单的修改，这是我的第一个帖子。在这里，总结一下经验：善用搜索，理解主干，抓大放小。网上教程很多，<br>我就不重复写了，把教程放到参考资料里。前人栽树，后人乘凉，感谢大佬们的教程分享。</p><p>运行小细节：<br>修改完配置或者要更新博客流程：<br>在博客目录下（我的是hexo）使用git bash(hexo文件夹右键git bash，也可以先打开git bash使用cd进入)，然后执行下面<br>    <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo n 帖子的名称（随意）<span class="comment">#会在source/_post/下生成相应的***.md文件，这个文件就是编辑帖子的具体内容</span></span><br><span class="line">$ hexo clean</span><br><span class="line">$ hexo g -d</span><br></pre></td></tr></table></figure><br>更新会延迟一分钟左右~~~~~~</p><p>工具总结：<br>（1）git<br>（2）hexo<br>（3）github(搭建图床库以及个人网站)<br>（4）PicGo（向搭建的github图床上传图片）<br>（5）文本编辑器：BowPad（开源免费，超轻便）</p><h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p>[1] 使用Github Pages与Hexo搭建博客 | jkzhao’s blog：<a href="https://jkzhao.github.io/2016/06/08/%E4%BD%BF%E7%94%A8Github-Pages%E4%B8%8EHexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">link</a><br>[2] Hexo教程：（一）安装及使用初体验 | 中二病也要玩 front end：<a href="https://lfkid.github.io/2016/11/16/Hexo%E6%95%99%E7%A8%8B%EF%BC%9A%EF%BC%88%E4%B8%80%EF%BC%89%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8%E5%88%9D%E4%BD%93%E9%AA%8C/">link</a><br>[3] 免费稳定图床最佳实践：PicGo+GitHub+jsDeliver 极简教程 - 云+社区 - 腾讯云<br>    <a href="https://cloud.tencent.com/developer/article/1793975?from=15425">link</a><br>[4] 使用Hexo+ Github 建站 时 使用 hexo d 命令异常：You should configure deployment settings in _config.yml first! Available deployer plugins: git For more help, you can check the online docs: <a href="https://hexo.io/">https://hexo.io/</a> - 无敌土豆 - 博客园：[link]<a href="https://www.cnblogs.com/imtudou/p/11205832.html">https://www.cnblogs.com/imtudou/p/11205832.html</a><br>[5] Hexo主题pure使用指南 | 非典型性程序员：<a href="https://blog.plcent.com/2019/11/05/hexo-theme-pure/index.html">link</a><br>[6] hexo常用命令笔记 - SegmentFault 思否：<a href="https://segmentfault.com/a/1190000002632530">link</a></p>]]></content>
     
     
       
