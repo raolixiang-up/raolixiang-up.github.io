@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-04-28T15:23:04.466Z</updated>
+  <updated>2022-04-28T16:26:45.972Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://example.com/2022/04/28/hexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
     <id>http://example.com/2022/04/28/hexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</id>
     <published>2022-04-28T15:09:26.000Z</published>
-    <updated>2022-04-28T15:23:04.466Z</updated>
+    <updated>2022-04-28T16:26:45.972Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="个人博客"><a href="#个人博客" class="headerlink" title="个人博客"></a>个人博客</h1><h2 id="第一篇"><a href="#第一篇" class="headerlink" title="第一篇"></a>第一篇</h2>]]></content>
+    <content type="html"><![CDATA[<h1 id="个人博客"><a href="#个人博客" class="headerlink" title="个人博客"></a>个人博客</h1><h2 id="第一篇"><a href="#第一篇" class="headerlink" title="第一篇"></a>第一篇</h2><p>动态背景</p>]]></content>
     
     
       
