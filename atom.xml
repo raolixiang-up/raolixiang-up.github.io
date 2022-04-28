@@ -6,7 +6,7 @@
   <link href="http://raolixiang-up.github.io/atom.xml" rel="self"/>
   
   <link href="http://raolixiang-up.github.io/"/>
-  <updated>2022-04-28T21:28:47.428Z</updated>
+  <updated>2022-04-28T21:46:09.423Z</updated>
   <id>http://raolixiang-up.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>机器学习001</title>
+    <link href="http://raolixiang-up.github.io/2022/04/29/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0001/"/>
+    <id>http://raolixiang-up.github.io/2022/04/29/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0001/</id>
+    <published>2022-04-28T21:43:56.000Z</published>
+    <updated>2022-04-28T21:46:09.423Z</updated>
+    
+    <content type="html"><![CDATA[<p>机器学习的基础数据挖掘</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;机器学习的基础数据挖掘&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    <category term="机器学习" scheme="http://raolixiang-up.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="ML" scheme="http://raolixiang-up.github.io/tags/ML/"/>
+    
+  </entry>
   
   <entry>
     <title>hexo个人博客(005)-标签和分类的产生</title>
