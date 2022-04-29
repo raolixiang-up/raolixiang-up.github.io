@@ -612,7 +612,7 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
   meta = meta.split(',').filter(function(item) {
     return GUEST.indexOf(item) > -1;
   });
-  var requiredFields = '';
+  var requiredFields = 'mail';
   requiredFields = requiredFields.split(',');
   new Valine({
     el: '#vcomments',
@@ -624,8 +624,8 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
     avatar: 'robohash',
     meta: meta,
     pageSize: '10' || 10,
-    enableQQ: '',
-	recordIP: '',
+    enableQQ: 'true',
+	recordIP: 'ture',
 	requiredFields: requiredFields,
 	visitor: true
   });
