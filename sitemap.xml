@@ -139,7 +139,7 @@
 
   <url>
     <loc>http://raolixiang-up.github.io/</loc>
-    <lastmod>2022-04-29</lastmod>
+    <lastmod>2022-04-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -147,14 +147,14 @@
   
   <url>
     <loc>http://raolixiang-up.github.io/tags/hexo/</loc>
-    <lastmod>2022-04-29</lastmod>
+    <lastmod>2022-04-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://raolixiang-up.github.io/tags/ML/</loc>
-    <lastmod>2022-04-29</lastmod>
+    <lastmod>2022-04-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -163,14 +163,14 @@
   
   <url>
     <loc>http://raolixiang-up.github.io/categories/hexo%E5%8D%9A%E5%AE%A2/</loc>
-    <lastmod>2022-04-29</lastmod>
+    <lastmod>2022-04-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://raolixiang-up.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2022-04-29</lastmod>
+    <lastmod>2022-04-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
