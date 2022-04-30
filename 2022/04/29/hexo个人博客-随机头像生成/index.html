@@ -613,7 +613,7 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
   meta = meta.split(',').filter(function(item) {
     return GUEST.indexOf(item) > -1;
   });
-  var requiredFields = '';
+  var requiredFields = 'mail';
   requiredFields = requiredFields.split(',');
   new Valine({
     el: '#vcomments',
