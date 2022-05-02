@@ -16,7 +16,7 @@ http://raolixiang-up.github.io/books/index.html
 http://raolixiang-up.github.io/about/index.html
 http://raolixiang-up.github.io/404.html
 http://raolixiang-up.github.io/
-http://raolixiang-up.github.io/tags/hexo/
 http://raolixiang-up.github.io/tags/ML/
-http://raolixiang-up.github.io/categories/hexo%E5%8D%9A%E5%AE%A2/
+http://raolixiang-up.github.io/tags/hexo/
 http://raolixiang-up.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/
+http://raolixiang-up.github.io/categories/hexo%E5%8D%9A%E5%AE%A2/
