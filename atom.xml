@@ -6,7 +6,7 @@
   <link href="http://raolixiang-up.github.io/atom.xml" rel="self"/>
   
   <link href="http://raolixiang-up.github.io/"/>
-  <updated>2022-05-04T08:56:28.355Z</updated>
+  <updated>2022-05-04T17:58:15.756Z</updated>
   <id>http://raolixiang-up.github.io/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>shell001-反向删除</title>
+    <link href="http://raolixiang-up.github.io/2022/05/05/shell001/"/>
+    <id>http://raolixiang-up.github.io/2022/05/05/shell001/</id>
+    <published>2022-05-04T17:39:45.000Z</published>
+    <updated>2022-05-04T17:58:15.756Z</updated>
+    
+    <content type="html"><![CDATA[<p>我咋特别喜欢揪着不常用的命令花费大量时间死磕呢，不是一个好习惯。</p><h2 id="shell反向删除"><a href="#shell反向删除" class="headerlink" title="shell反向删除"></a>shell反向删除</h2><h3 id="方法1"><a href="#方法1" class="headerlink" title="方法1"></a>方法1</h3><p>花了很长时间终于找到解决方案。<br>    <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">shopt</span> -s extglob   <span class="comment">#（打开extglob模式）</span></span><br><span class="line">$ <span class="built_in">rm</span> -rf !(file1) 或者 <span class="built_in">rm</span> -rf !(file1|file2|...) -删除多个文件</span><br></pre></td></tr></table></figure><br>顺利反向删除</p><h3 id="方法2"><a href="#方法2" class="headerlink" title="方法2"></a>方法2</h3><p>当前文件夹中结合使用grep和xargs来处理文件名：ls | grep -v keep | xargs rm  #删除keep文件之外的所有文件<br>说明：ls先得到当前的所有文件和文件夹的名字，grep -v keep，进行grep正则匹配查找keep，-v参数决定了结果为匹配之外的结果，也就是的到了keep之外的所有文件名，然后  xargs用于从  标准输入获得参数  并且传递给后面的命令，这里使用的命令是  rm，然后由rm删除前面选择的文件。<br>好处：使用了grep来正则表达式来匹配文件名字，可以一次保留多个文件，从而进行更加准确的处理。</p><h3 id="方法3"><a href="#方法3" class="headerlink" title="方法3"></a>方法3</h3><p>使用find命令代替ls，改进方法3从而能够处理制定文件夹的文件：<br>find ./test/ | grep -v keep | xargs rm  #删除当前test文件夹中keep文件之外的所有文件<br>说明，用grep而不用find -name选取名字，因为find选取名字时比较麻烦，对正则表达式支持不够，无法排除指定文件名。</p><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p>[1] <a href="https://blog.csdn.net/taiyang1987912/article/details/41488395">linux shell下除了某个文件外的其他文件全部删除的命令_乌托邦2号的博客-CSDN博客_linux删除除了某个文件的其他文件</a><br>[2] <a href="https://blog.csdn.net/youcijibi/article/details/103674402">rm -rf 排除指定文件夹或文件_youcijibi的博客-CSDN博客_rm 排除目录</a><br>[3] <a href="https://cloud.tencent.com/developer/article/1849817">Linux下使用rm删除文件，并排除指定文件 - 云+社区 - 腾讯云</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;我咋特别喜欢揪着不常用的命令花费大量时间死磕呢，不是一个好习惯。&lt;/p&gt;
+&lt;h2 id=&quot;shell反向删除&quot;&gt;&lt;a href=&quot;#shell反向删除&quot; class=&quot;headerlink&quot; title=&quot;shell反向删除&quot;&gt;&lt;/a&gt;shell反向删除&lt;/h2&gt;&lt;h3 i</summary>
+      
+    
+    
+    
+    <category term="课题组" scheme="http://raolixiang-up.github.io/categories/%E8%AF%BE%E9%A2%98%E7%BB%84/"/>
+    
+    
+    <category term="科研追踪" scheme="http://raolixiang-up.github.io/tags/%E7%A7%91%E7%A0%94%E8%BF%BD%E8%B8%AA/"/>
+    
+  </entry>
+  
+  <entry>
     <title>科研追踪001</title>
     <link href="http://raolixiang-up.github.io/2022/05/04/%E7%A7%91%E7%A0%94%E8%BF%BD%E8%B8%AA001/"/>
     <id>http://raolixiang-up.github.io/2022/05/04/%E7%A7%91%E7%A0%94%E8%BF%BD%E8%B8%AA001/</id>
     <published>2022-05-04T08:28:59.000Z</published>
-    <updated>2022-05-04T08:56:28.355Z</updated>
+    <updated>2022-05-04T17:40:35.327Z</updated>
     
     <content type="html"><![CDATA[<p>搜集一下需要关注的课题组主页吧，会更新。</p><h2 id="研究类"><a href="#研究类" class="headerlink" title="研究类"></a>研究类</h2><ol><li><a href="http://www.jiawanghong.org/index.html">Jiawang Hong Research Group</a>—-自己所属课题组，必须关注</li><li><a href="https://ombe.nju.edu.cn/main.htm">氧化物分子束外延及电子结构表征实验室</a>—聂越峰老师课题组</li><li><a href="https://sites.google.com/site/zrfbuaa/home">Website of Dr. Ruifeng Zhang</a>—张瑞丰老师课题组</li><li><a href="https://crystal.nju.edu.cn/zh/">功能晶体材料实验室</a>—陈彦彬老师课题组</li><li><a href="http://www.comates.group/">Computational Materials Science Group : Wan-Jian Yin (尹万健) Group</a></li><li><a href="https://pld.nju.edu.cn/">PLD Lab</a>—刘俊明老师课题组</li><li><a href="https://physics.seu.edu.cn/sdong/">东南大学量子材料物理研究组-Welcome to the PQM Group</a>—董帅老师课题组</li><li><a href="https://www.labxing.com/lucheng">卢成课题组 | 中国地质大学（武汉） | LabXing</a></li><li><a href="https://stokes.byu.edu/stokes/stokes.html">Harold T. Stokes</a></li><li><a href="https://fenniegroup.org/">Fennie Group Materials Physics</a></li><li><a href="http://thermoelectrics.matsci.northwestern.edu/">Thermoelectrics at Northwestern</a><h2 id="工具类"><a href="#工具类" class="headerlink" title="工具类"></a>工具类</h2></li><li><a href="https://harzing.com/home">Harzing.com</a>—文献情报搜索类，很多软件</li></ol>]]></content>
     
@@ -35,10 +60,10 @@
     
     
     
-    <category term="课题组" scheme="http://raolixiang-up.github.io/categories/%E8%AF%BE%E9%A2%98%E7%BB%84/"/>
+    <category term="科研追踪" scheme="http://raolixiang-up.github.io/categories/%E7%A7%91%E7%A0%94%E8%BF%BD%E8%B8%AA/"/>
     
     
-    <category term="科研追踪" scheme="http://raolixiang-up.github.io/tags/%E7%A7%91%E7%A0%94%E8%BF%BD%E8%B8%AA/"/>
+    <category term="课题组" scheme="http://raolixiang-up.github.io/tags/%E8%AF%BE%E9%A2%98%E7%BB%84/"/>
     
   </entry>
   
