@@ -6,7 +6,7 @@
   <link href="http://raolixiang-up.github.io/atom.xml" rel="self"/>
   
   <link href="http://raolixiang-up.github.io/"/>
-  <updated>2022-05-12T17:09:28.095Z</updated>
+  <updated>2022-05-13T09:32:53.438Z</updated>
   <id>http://raolixiang-up.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://raolixiang-up.github.io/2022/05/12/%E7%A7%91%E7%A0%94%E4%BB%A3%E7%A0%81003-%E6%94%B6%E6%95%9B%E6%80%A7%E6%B5%8B%E8%AF%95/"/>
     <id>http://raolixiang-up.github.io/2022/05/12/%E7%A7%91%E7%A0%94%E4%BB%A3%E7%A0%81003-%E6%94%B6%E6%95%9B%E6%80%A7%E6%B5%8B%E8%AF%95/</id>
     <published>2022-05-12T15:41:17.000Z</published>
-    <updated>2022-05-12T17:09:28.095Z</updated>
+    <updated>2022-05-13T09:32:53.438Z</updated>
     
-    <content type="html"><![CDATA[<p>收敛性测试，可以自己编写代码，也可以使用现成的代码，这里分享一个脚本vaspup。</p><h2 id="vaspup程序"><a href="#vaspup程序" class="headerlink" title="vaspup程序"></a>vaspup程序</h2><p>vaspup下载安装见：<a href="https://github.com/kavanase/vaspup2.0">kavanase/vaspup2.0: VASP Convergence Testing for Energy &amp; Dielectric Constants</a><br>使用教程见程序给的例子和上述链接。</p><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p>[1] <a href="https://github.com/kavanase/vaspup2.0">kavanase/vaspup2.0: VASP Convergence Testing for Energy &amp; Dielectric Constants</a></p>]]></content>
+    <content type="html"><![CDATA[<p>收敛性测试，可以自己编写代码，也可以使用现成的代码，这里分享一个脚本vaspup。</p><h2 id="vaspup程序"><a href="#vaspup程序" class="headerlink" title="vaspup程序"></a>vaspup程序</h2><p>vaspup下载安装见：<a href="https://github.com/kavanase/vaspup2.0">kavanase/vaspup2.0: VASP Convergence Testing for Energy &amp; Dielectric Constants</a><br>使用教程见程序给的例子和上述链接。<br>##注意事项<br>INCAR中等号=两边有一个空格。仅仅测试的关键词满足即可。KPOINTS也一样</p><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p>[1] <a href="https://github.com/kavanase/vaspup2.0">kavanase/vaspup2.0: VASP Convergence Testing for Energy &amp; Dielectric Constants</a></p>]]></content>
     
     
       
@@ -42,11 +42,11 @@
   </entry>
   
   <entry>
-    <title>cohp高通量计算003-结构优化是否收敛的统计</title>
+    <title>cohp高通量计算004-结构优化是否收敛的统计</title>
     <link href="http://raolixiang-up.github.io/2022/05/12/cohp%E9%AB%98%E9%80%9A%E9%87%8F%E8%AE%A1%E7%AE%97/"/>
     <id>http://raolixiang-up.github.io/2022/05/12/cohp%E9%AB%98%E9%80%9A%E9%87%8F%E8%AE%A1%E7%AE%97/</id>
     <published>2022-05-11T19:53:27.000Z</published>
-    <updated>2022-05-11T20:15:10.889Z</updated>
+    <updated>2022-05-13T09:18:53.679Z</updated>
     
     <content type="html"><![CDATA[<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>搞了很久，仍然卡在一个很奇葩的点上，我清楚的知道问题，但是没找到教程，弱爆了。问题如下所示：<br>result1=$(grep “reached” ${i}/GO/OUTCAR | tail -1)输出的字符串与”reached required accuracy - stopping structural energy minimisation”字符串不等价，目前还没找到解决方案。<br>这绝不是一个很难问题，只是我还没找到解决问题的路径。</p><h2 id="脚本代码"><a href="#脚本代码" class="headerlink" title="脚本代码"></a>脚本代码</h2><p>我采用另一种方式解决了这个问题，代码如下：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/usr/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> A*</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line"><span class="built_in">cd</span> <span class="variable">$&#123;i&#125;</span>/GO/</span><br><span class="line">result1=$(grep <span class="string">&quot;reached&quot;</span> <span class="variable">$&#123;i&#125;</span>/GO/OUTCAR | <span class="built_in">tail</span> -1)</span><br><span class="line">result2=$(grep <span class="string">&quot;reached&quot;</span> A001*/GO/OUTCAR | <span class="built_in">tail</span> -1) <span class="comment">##找个确定收敛的OUTCAR</span></span><br><span class="line"><span class="comment"># final=`tail -1 out.vasp | awk &#x27;&#123;print $1,$2&#125;&#x27;`</span></span><br><span class="line"><span class="comment"># if [ &quot;$final&quot;x == &quot;1 F=&quot;x ];then</span></span><br><span class="line"><span class="keyword">if</span> [ <span class="string">&quot;<span class="variable">$&#123;result1&#125;</span>&quot;</span>x == <span class="string">&quot;<span class="variable">$&#123;result2&#125;</span>&quot;</span>x ];<span class="keyword">then</span></span><br><span class="line">convergence_result=<span class="string">&quot;Yes&quot;</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">convergence_result=<span class="string">&quot;No&quot;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;i&#125;</span> <span class="variable">$&#123;convergence_result&#125;</span> &gt;&gt; convergence_result.dat</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line">sed -i <span class="string">&#x27;1i system convergence_result&#x27;</span> convergence_result.dat </span><br></pre></td></tr></table></figure><p>结构达到收敛的就不再统计，只统计结构优化未收敛的结果。找一个确定收敛的OUTCAR，提取关键语句，赋值在result2,然后其他的提取结果都与result2比较，顺利解决问题.<br>如有错误，欢迎指正~~~~~~~</p><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p>[1] <a href="https://www.runoob.com/linux/linux-shell-variable.html">Shell 变量 | 菜鸟教程</a><br>[2] <a href="https://www.cnblogs.com/kaishirenshi/p/9729800.html">shell中的if语句 - 开始认识 - 博客园</a><br>[3] <a href="https://blog.csdn.net/Mr_LeeHY/article/details/76383091">(5条消息) Shell字符串比较相等、不相等方法小结_Howie Lee的博客-CSDN博客_shell 字符串不相等</a><br>[4] <a href="https://blog.csdn.net/kobejayandy/article/details/13291525">(5条消息) Linux下的文本dos格式转Unix格式,去除^M符号_kobejayandy的博客-CSDN博客_dos格式和unix格式</a></p>]]></content>
     
