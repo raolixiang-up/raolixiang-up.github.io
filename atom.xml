@@ -6,7 +6,7 @@
   <link href="http://raolixiang-up.github.io/atom.xml" rel="self"/>
   
   <link href="http://raolixiang-up.github.io/"/>
-  <updated>2022-05-13T09:32:53.438Z</updated>
+  <updated>2022-05-14T13:49:51.270Z</updated>
   <id>http://raolixiang-up.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>cohp高通量计算005-静态自洽计算是否正常结束的统计</title>
+    <link href="http://raolixiang-up.github.io/2022/05/14/cohp%E9%AB%98%E9%80%9A%E9%87%8F%E8%AE%A1%E7%AE%97005-%E9%9D%99%E6%80%81%E8%87%AA%E6%B4%BD%E8%AE%A1%E7%AE%97%E6%98%AF%E5%90%A6%E6%AD%A3%E5%B8%B8%E7%BB%93%E6%9D%9F%E7%9A%84%E7%BB%9F%E8%AE%A1/"/>
+    <id>http://raolixiang-up.github.io/2022/05/14/cohp%E9%AB%98%E9%80%9A%E9%87%8F%E8%AE%A1%E7%AE%97005-%E9%9D%99%E6%80%81%E8%87%AA%E6%B4%BD%E8%AE%A1%E7%AE%97%E6%98%AF%E5%90%A6%E6%AD%A3%E5%B8%B8%E7%BB%93%E6%9D%9F%E7%9A%84%E7%BB%9F%E8%AE%A1/</id>
+    <published>2022-05-14T13:24:23.000Z</published>
+    <updated>2022-05-14T13:49:51.270Z</updated>
+    
+    <content type="html"><![CDATA[<p>总是要写很多稀奇古怪的脚本，因为计算cohp需要一步静态自洽计算，因此判定静态自洽是否正常结束非常重要。因为任务数目过多，所以需要写一个批量判定脚本。</p><h2 id="编写思路"><a href="#编写思路" class="headerlink" title="编写思路"></a>编写思路</h2><p>对静态自洽的步数和INCAR中设置的步数进行比较如果不等，表明静态自洽计算正常结束。如果相等，静态自洽有可能没有正常结束，此时要比较OSZICAR中的dE和INCAR中的EDIFF。如果dE小于EDIFF则正常结束，反之，则未收敛。</p><h2 id="脚本代码"><a href="#脚本代码" class="headerlink" title="脚本代码"></a>脚本代码</h2><p>脚本ls-st-convergence.sh要和批量任务放在一个文件夹内，静态自洽的INCAR中等号=两边有空格，代码如下：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/usr/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> A*</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line"></span><br><span class="line">N=$(<span class="built_in">tail</span> -n 2 <span class="variable">$&#123;i&#125;</span>/static/OSZICAR | awk <span class="string">&#x27;NR==1 &#123;print $2&#125;&#x27;</span>)</span><br><span class="line">dE=$(<span class="built_in">tail</span> -n 2 <span class="variable">$&#123;i&#125;</span>/static/OSZICAR | awk <span class="string">&#x27;NR==1 &#123;print $4&#125;&#x27;</span>) </span><br><span class="line">NELM=$(<span class="built_in">cat</span> <span class="variable">$&#123;i&#125;</span>/static/INCAR | awk <span class="string">&#x27;NR==13 &#123;print $3&#125;&#x27;</span>) <span class="comment"># 参考自己的INCAR提取</span></span><br><span class="line">EDIFF=$(<span class="built_in">cat</span> <span class="variable">$&#123;i&#125;</span>/static/INCAR | awk <span class="string">&#x27;NR==1 &#123;print $3&#125;&#x27;</span>) <span class="comment"># 参考自己的INCAR提取</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ <span class="string">&quot;<span class="variable">$&#123;N&#125;</span>&quot;</span> = <span class="string">&quot;<span class="variable">$&#123;NELM&#125;</span>&quot;</span> ];<span class="keyword">then</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;i&#125;</span> <span class="variable">$&#123;N&#125;</span> <span class="variable">$&#123;NELM&#125;</span> <span class="variable">$&#123;dE&#125;</span> <span class="variable">$&#123;EDIFF&#125;</span> &gt;&gt; no-st-convergence_result.dat</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">convergence_result=<span class="string">&quot;No&quot;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;i&#125;</span> <span class="variable">$&#123;N&#125;</span> <span class="variable">$&#123;NELM&#125;</span> <span class="variable">$&#123;dE&#125;</span> <span class="variable">$&#123;EDIFF&#125;</span>  &gt;&gt; yes-st-convergence_result.dat</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line">sed -i <span class="string">&#x27;1i system N NEM dE EDIFF&#x27;</span> no-convergence_result.dat</span><br><span class="line">sed -i <span class="string">&#x27;1i system N NEM dE EDIFF&#x27;</span> yes-convergence_result.dat</span><br></pre></td></tr></table></figure><p>这里不收敛的结构在no-st-convergence_result.dat中，收敛的结果在yes-convergence_result.dat。如果执行脚本时出现下列语句：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed：无法读取 no-st-convergence_result.dat：没有那个文件或目录</span><br></pre></td></tr></table></figure><p>那么恭喜你，你的所有静态自洽计算都是收敛的。</p><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p>[1] <a href="https://www.cnblogs.com/kaishirenshi/p/9729800.html">shell中的if语句 - 开始认识 - 博客园</a><br>[2] <a href="https://www.runoob.com/linux/linux-comm-awk.html">Linux awk 命令 | 菜鸟教程</a><br>[3] <a href="https://blog.csdn.net/fengfeifengfei/article/details/40371935">(5条消息) awk妙用（如何取出某行某列的某个元素）_god_is_my的博客-CSDN博客</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;总是要写很多稀奇古怪的脚本，因为计算cohp需要一步静态自洽计算，因此判定静态自洽是否正常结束非常重要。因为任务数目过多，所以需要写一个批量判定脚本。&lt;/p&gt;
+&lt;h2 id=&quot;编写思路&quot;&gt;&lt;a href=&quot;#编写思路&quot; class=&quot;headerlink&quot; title=&quot;编</summary>
+      
+    
+    
+    
+    <category term="机器学习" scheme="http://raolixiang-up.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="ML" scheme="http://raolixiang-up.github.io/tags/ML/"/>
+    
+  </entry>
   
   <entry>
     <title>科研代码003-收敛性测试</title>

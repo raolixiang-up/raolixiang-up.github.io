@@ -17,21 +17,21 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>科研代码002-任务收敛情况监控脚本 | raolixiang</title>
-  <meta name="description" content="在任务运行过程中监测任务的收敛情况，有两个脚本。 rsgradvasp计算监控程序，使用rust语言编写，具体详情见主页：Ionizing&#x2F;rsgrad: A VASP calculation monitor. Written in Rust安装包下载地址：Release 0.3.6 · Ionizing&#x2F;rsgrad，直接使用预编译二进制文件即可。运行指令如下： 1rsgrad rlx # 监控">
+  <title>cohp高通量计算005-静态自洽计算是否正常结束的统计 | raolixiang</title>
+  <meta name="description" content="总是要写很多稀奇古怪的脚本，因为计算cohp需要一步静态自洽计算，因此判定静态自洽是否正常结束非常重要。因为任务数目过多，所以需要写一个批量判定脚本。 编写思路对静态自洽的步数和INCAR中设置的步数进行比较如果不等，表明静态自洽计算正常结束。如果相等，静态自洽有可能没有正常结束，此时要比较OSZICAR中的dE和INCAR中的EDIFF。如果dE小于EDIFF则正常结束，反之，则未收敛。 脚本代">
 <meta property="og:type" content="article">
-<meta property="og:title" content="科研代码002-任务收敛情况监控脚本">
-<meta property="og:url" content="http://raolixiang-up.github.io/2022/05/12/%E6%9F%A5%E7%9C%8B%E4%BB%BB%E5%8A%A1%E6%94%B6%E6%95%9B%E6%83%85%E5%86%B5/index.html">
+<meta property="og:title" content="cohp高通量计算005-静态自洽计算是否正常结束的统计">
+<meta property="og:url" content="http://raolixiang-up.github.io/2022/05/14/cohp%E9%AB%98%E9%80%9A%E9%87%8F%E8%AE%A1%E7%AE%97005-%E9%9D%99%E6%80%81%E8%87%AA%E6%B4%BD%E8%AE%A1%E7%AE%97%E6%98%AF%E5%90%A6%E6%AD%A3%E5%B8%B8%E7%BB%93%E6%9D%9F%E7%9A%84%E7%BB%9F%E8%AE%A1/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="在任务运行过程中监测任务的收敛情况，有两个脚本。 rsgradvasp计算监控程序，使用rust语言编写，具体详情见主页：Ionizing&#x2F;rsgrad: A VASP calculation monitor. Written in Rust安装包下载地址：Release 0.3.6 · Ionizing&#x2F;rsgrad，直接使用预编译二进制文件即可。运行指令如下： 1rsgrad rlx # 监控">
+<meta property="og:description" content="总是要写很多稀奇古怪的脚本，因为计算cohp需要一步静态自洽计算，因此判定静态自洽是否正常结束非常重要。因为任务数目过多，所以需要写一个批量判定脚本。 编写思路对静态自洽的步数和INCAR中设置的步数进行比较如果不等，表明静态自洽计算正常结束。如果相等，静态自洽有可能没有正常结束，此时要比较OSZICAR中的dE和INCAR中的EDIFF。如果dE小于EDIFF则正常结束，反之，则未收敛。 脚本代">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-05-11T16:04:07.000Z">
-<meta property="article:modified_time" content="2022-05-11T16:36:02.905Z">
+<meta property="article:published_time" content="2022-05-14T13:24:23.000Z">
+<meta property="article:modified_time" content="2022-05-14T13:49:51.270Z">
 <meta property="article:author" content="raolixiang">
-<meta property="article:tag" content="github">
+<meta property="article:tag" content="ML">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://raolixiang-up.github.io/2022/05/12/%E6%9F%A5%E7%9C%8B%E4%BB%BB%E5%8A%A1%E6%94%B6%E6%95%9B%E6%83%85%E5%86%B5/index.html">
+  <link rel="canonical" href="http://raolixiang-up.github.io/2022/05/14/cohp%E9%AB%98%E9%80%9A%E9%87%8F%E8%AE%A1%E7%AE%97005-%E9%9D%99%E6%80%81%E8%87%AA%E6%B4%BD%E8%AE%A1%E7%AE%97%E6%98%AF%E5%90%A6%E6%AD%A3%E5%B8%B8%E7%BB%93%E6%9D%9F%E7%9A%84%E7%BB%9F%E8%AE%A1/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -344,21 +344,21 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#rsgrad"><span class="toc-number">1.</span> <span class="toc-text">rsgrad</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#extforce-sh%E5%92%8Cscreenfore-py%E8%84%9A%E6%9C%AC%E7%9B%91%E6%8E%A7"><span class="toc-number">2.</span> <span class="toc-text">extforce.sh和screenfore.py脚本监控</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="toc-number">3.</span> <span class="toc-text">参考资料</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%96%E5%86%99%E6%80%9D%E8%B7%AF"><span class="toc-number">1.</span> <span class="toc-text">编写思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%84%9A%E6%9C%AC%E4%BB%A3%E7%A0%81"><span class="toc-number">2.</span> <span class="toc-text">脚本代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="toc-number">3.</span> <span class="toc-text">参考资料</span></a></li></ol>
     </nav>
   </div>
 </aside>
 
 <main class="main" role="main">
   <div class="content">
-  <article id="post-查看任务收敛情况" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-cohp高通量计算005-静态自洽计算是否正常结束的统计" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      科研代码002-任务收敛情况监控脚本
+      cohp高通量计算005-静态自洽计算是否正常结束的统计
     </h1>
   
 
@@ -366,20 +366,20 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2022/05/12/%E6%9F%A5%E7%9C%8B%E4%BB%BB%E5%8A%A1%E6%94%B6%E6%95%9B%E6%83%85%E5%86%B5/" class="article-date">
-	  <time datetime="2022-05-11T16:04:07.000Z" itemprop="datePublished">2022-05-12</time>
+	<a href="/2022/05/14/cohp%E9%AB%98%E9%80%9A%E9%87%8F%E8%AE%A1%E7%AE%97005-%E9%9D%99%E6%80%81%E8%87%AA%E6%B4%BD%E8%AE%A1%E7%AE%97%E6%98%AF%E5%90%A6%E6%AD%A3%E5%B8%B8%E7%BB%93%E6%9D%9F%E7%9A%84%E7%BB%9F%E8%AE%A1/" class="article-date">
+	  <time datetime="2022-05-14T13:24:23.000Z" itemprop="datePublished">2022-05-14</time>
 	</a>
 </span>
         
   <span class="article-category">
     <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/%E7%A7%91%E7%A0%94%E4%BB%A3%E7%A0%81/">科研代码</a>
+    <a class="article-category-link" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a>
   </span>
 
         
   <span class="article-tag">
     <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/github/" rel="tag">github</a>
+	<a class="article-tag-link-link" href="/tags/ML/" rel="tag">ML</a>
   </span>
 
 
@@ -387,31 +387,30 @@
 
 	<span class="article-read hidden-xs">
     	<i class="icon icon-eye-fill" aria-hidden="true"></i>
-    	<span id="/2022/05/12/%E6%9F%A5%E7%9C%8B%E4%BB%BB%E5%8A%A1%E6%94%B6%E6%95%9B%E6%83%85%E5%86%B5/" class="leancloud_visitors"  data-flag-title="科研代码002-任务收敛情况监控脚本">0</span>
+    	<span id="/2022/05/14/cohp%E9%AB%98%E9%80%9A%E9%87%8F%E8%AE%A1%E7%AE%97005-%E9%9D%99%E6%80%81%E8%87%AA%E6%B4%BD%E8%AE%A1%E7%AE%97%E6%98%AF%E5%90%A6%E6%AD%A3%E5%B8%B8%E7%BB%93%E6%9D%9F%E7%9A%84%E7%BB%9F%E8%AE%A1/" class="leancloud_visitors"  data-flag-title="cohp高通量计算005-静态自洽计算是否正常结束的统计">0</span>
     </span>
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/05/12/%E6%9F%A5%E7%9C%8B%E4%BB%BB%E5%8A%A1%E6%94%B6%E6%95%9B%E6%83%85%E5%86%B5/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/05/14/cohp%E9%AB%98%E9%80%9A%E9%87%8F%E8%AE%A1%E7%AE%97005-%E9%9D%99%E6%80%81%E8%87%AA%E6%B4%BD%E8%AE%A1%E7%AE%97%E6%98%AF%E5%90%A6%E6%AD%A3%E5%B8%B8%E7%BB%93%E6%9D%9F%E7%9A%84%E7%BB%9F%E8%AE%A1/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 857(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 494(字)</span>
 	
 	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 4(分)</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2(分)</span>
 	
 
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <p>在任务运行过程中监测任务的收敛情况，有两个脚本。</p>
-<h2 id="rsgrad"><a href="#rsgrad" class="headerlink" title="rsgrad"></a>rsgrad</h2><p>vasp计算监控程序，使用rust语言编写，具体详情见主页：<a target="_blank" rel="noopener" href="https://github.com/Ionizing/rsgrad">Ionizing/rsgrad: A VASP calculation monitor. Written in Rust</a><br>安装包下载地址：<a target="_blank" rel="noopener" href="https://github.com/Ionizing/rsgrad/releases/tag/0.3.6">Release 0.3.6 · Ionizing/rsgrad</a>，直接使用预编译二进制文件即可。<br>运行指令如下：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rsgrad rlx <span class="comment"># 监控结构弛豫过程</span></span><br></pre></td></tr></table></figure>
-<p>具体详细信息见主页。</p>
-<h2 id="extforce-sh和screenfore-py脚本监控"><a href="#extforce-sh和screenfore-py脚本监控" class="headerlink" title="extforce.sh和screenfore.py脚本监控"></a>extforce.sh和screenfore.py脚本监控</h2><p>extforce.sh脚本的思路：<br>1）从OUTCAR中提取所有的TOTAL-FORCE部分信息（每个原子上的force vectors）；<br>2）用for循环调用screenforce.py筛选出每一个离子步受力大于EDIFFG的原子，及对应的原子序号，存储在lt_ediffg_${i}.dat，i为相应的离子步数。然后可以用p4vasp软件查看 具体是哪些原子没有达到力收敛标准。<br>预设的参数：<br>1）在extforce.sh里设置体系的原子数（N_atoms）；<br>2）在screenforce.py里设置一下EDIFFG（ediffg）。<br>需用python3，如果只有python2的话可以把screenforce.py的print那几行改成py2的格式即可，使用时将extforce.sh, screenforce.py, OUTCAR放在同一目录下，执行./extforce.sh即可。<br>相关介绍见：<a target="_blank" rel="noopener" href="http://bbs.keinsci.com/thread-19985-1-1.html">分享从OUTCAR查看原子受力的小脚本 - 第一性原理 (First Principle) - 计算化学公社</a><br>对extforce.sh进行了简单的修改，直接从POSCAR获得原子总数，代码如下：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="comment"># Written by qmlearner at Homestay Uni.</span></span><br><span class="line"></span><br><span class="line"><span class="comment">######################################################</span></span><br><span class="line"><span class="comment">#Define the number of atoms (N_atoms) of your system.#</span></span><br><span class="line"><span class="comment">######################################################</span></span><br><span class="line">N_atoms=`<span class="built_in">cat</span> POSCAR | sed -n <span class="string">&#x27;7p&#x27;</span> | awk <span class="string">&#x27;&#123; for(i=1;i&lt;=NF;i++) sum+=$i; print sum&#125;&#x27;</span>`</span><br><span class="line">N_Lines_1=$(<span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$&#123;N_atoms&#125;</span>+1&quot;</span> | bc)</span><br><span class="line">N_Lines_2=$(<span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$&#123;N_atoms&#125;</span>+2&quot;</span> | bc)</span><br><span class="line"></span><br><span class="line"><span class="comment">########################################</span></span><br><span class="line"><span class="comment">#Extract the force vectors of each atom# </span></span><br><span class="line"><span class="comment">#for each ionic step.                  #</span></span><br><span class="line"><span class="comment">########################################</span></span><br><span class="line"><span class="keyword">if</span> [ ! -f <span class="string">&quot;OUTCAR&quot;</span> ]; <span class="keyword">then</span></span><br><span class="line"> <span class="built_in">echo</span> <span class="string">&quot;Does not find OUTCAR.&quot;</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line"> sed -n <span class="string">&quot;/TOTAL-FORCE/,+<span class="variable">$&#123;N_Lines_1&#125;</span>p&quot;</span> OUTCAR &gt; forcevectors.dat</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line">N_ionic_steps=$(grep -o <span class="string">&#x27;TOTAL-FORCE&#x27;</span> forcevectors.dat | <span class="built_in">wc</span> -l)</span><br><span class="line"></span><br><span class="line"><span class="built_in">cp</span> forcevectors.dat forcevectors-back.dat</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> ((i=1;i&lt;=<span class="variable">$&#123;N_ionic_steps&#125;</span>;i++));</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  sed -n <span class="string">&quot;3,<span class="variable">$&#123;N_Lines_2&#125;</span>p&quot;</span> forcevectors.dat | awk <span class="string">&#x27;&#123;printf &quot;%10s   %10s   %10s   \n&quot;,$4,$5,$6&#125;&#x27;</span> &gt; sep_forcevectors.dat</span><br><span class="line">  sed  <span class="string">&quot;1,<span class="variable">$&#123;N_Lines_2&#125;</span>d&quot;</span> forcevectors.dat &gt; forcevectors_del.dat</span><br><span class="line">  <span class="built_in">mv</span> forcevectors_del.dat forcevectors.dat</span><br><span class="line">  python screenforce.py</span><br><span class="line">  <span class="built_in">mv</span> lt_ediffg.dat lt_ediffg_<span class="variable">$&#123;i&#125;</span>.dat</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">rm</span> forcevectors.dat sep_forcevectors.dat atomicforce.dat</span><br></pre></td></tr></table></figure>
-<p>screenforce.py的代码如下：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/usr/bin/python -u </span></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="comment"># Calculate the force of each atom. Screen the force not fullfil convergence criteria and the </span></span><br><span class="line"><span class="comment"># corresponding atom number.</span></span><br><span class="line"><span class="comment"># Written by qmlearner at Homestay Uni. </span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#import math </span></span><br><span class="line"><span class="comment">#import numpy as np</span></span><br><span class="line"><span class="comment">#import re</span></span><br><span class="line">import os</span><br><span class="line"></span><br><span class="line">a=open(<span class="string">&#x27;sep_forcevectors.dat&#x27;</span>,<span class="string">&#x27;r+&#x27;</span>)</span><br><span class="line"></span><br><span class="line">af=<span class="string">&#x27;atomicforce.dat&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> os.path.exists(af):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;---------------------------------------------&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;%s file already exists. It will be deleted.&quot;</span> %(af)) </span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;---------------------------------------------&quot;</span>)</span><br><span class="line">    os.remove(af)</span><br><span class="line"></span><br><span class="line">b=open(af,<span class="string">&#x27;a&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">la=a.readlines()</span><br><span class="line"></span><br><span class="line"><span class="comment">###############################################</span></span><br><span class="line"><span class="comment">#Calculate the force performing on each atom###</span></span><br><span class="line"><span class="comment">###############################################</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(la)):</span><br><span class="line">    x=<span class="built_in">float</span>(la[i].strip().<span class="built_in">split</span>()[0])</span><br><span class="line">    y=<span class="built_in">float</span>(la[i].strip().<span class="built_in">split</span>()[1])</span><br><span class="line">    z=<span class="built_in">float</span>(la[i].strip().<span class="built_in">split</span>()[2])</span><br><span class="line">   </span><br><span class="line">    F=(x**2 + y**2 + z**2)**0.5</span><br><span class="line">    b.write(str(F))</span><br><span class="line">    b.write(<span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line"></span><br><span class="line">a.close()</span><br><span class="line">b.close()</span><br><span class="line"></span><br><span class="line"><span class="comment">################################################</span></span><br><span class="line"><span class="comment">#Output the force that does not fulfill        #</span></span><br><span class="line"><span class="comment">#convergence criteria.                         #</span></span><br><span class="line"><span class="comment">################################################</span></span><br><span class="line"></span><br><span class="line">c=open(<span class="string">&#x27;atomicforce.dat&#x27;</span>,<span class="string">&#x27;r&#x27;</span>)</span><br><span class="line"></span><br><span class="line">ce=<span class="string">&#x27;lt_ediffg.dat&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> os.path.exists(ce):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;------------------------------------------&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;%s file already exists. It will be deleted.&quot;</span> %(ce)) </span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;------------------------------------------&quot;</span>)</span><br><span class="line">    os.remove(ce)</span><br><span class="line"></span><br><span class="line">d=open(ce,<span class="string">&#x27;a&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">lc=c.readlines()</span><br><span class="line"></span><br><span class="line"><span class="comment">##################################################</span></span><br><span class="line"><span class="comment">#Change the ediffg according to your own settings#</span></span><br><span class="line"><span class="comment">##################################################</span></span><br><span class="line">ediffg=0.01</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(lc)):</span><br><span class="line">    F=<span class="built_in">float</span>(lc[i].strip())       </span><br><span class="line">    <span class="keyword">if</span> F &gt;= ediffg:</span><br><span class="line">        d.write(str(i+1))</span><br><span class="line">        d.write(<span class="string">&#x27;\t&#x27;</span>)</span><br><span class="line">        d.write(str(F))</span><br><span class="line">        d.write(<span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line"></span><br><span class="line">c.close()</span><br><span class="line">d.close()</span><br></pre></td></tr></table></figure>
-<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p>[1] <a target="_blank" rel="noopener" href="https://github.com/Ionizing/rsgrad">Ionizing/rsgrad: A VASP calculation monitor. Written in Rust</a><br>[2] <a target="_blank" rel="noopener" href="http://bbs.keinsci.com/thread-19985-1-1.html">分享从OUTCAR查看原子受力的小脚本 - 第一性原理 (First Principle) - 计算化学公社</a><br>[3] <a target="_blank" rel="noopener" href="https://blog.csdn.net/chenxieyy/article/details/53786313">(5条消息) linux 一行数值累加求和_yychenxie21的博客-CSDN博客_linux 累加</a></p>
+        <p>总是要写很多稀奇古怪的脚本，因为计算cohp需要一步静态自洽计算，因此判定静态自洽是否正常结束非常重要。因为任务数目过多，所以需要写一个批量判定脚本。</p>
+<h2 id="编写思路"><a href="#编写思路" class="headerlink" title="编写思路"></a>编写思路</h2><p>对静态自洽的步数和INCAR中设置的步数进行比较如果不等，表明静态自洽计算正常结束。如果相等，静态自洽有可能没有正常结束，此时要比较OSZICAR中的dE和INCAR中的EDIFF。如果dE小于EDIFF则正常结束，反之，则未收敛。</p>
+<h2 id="脚本代码"><a href="#脚本代码" class="headerlink" title="脚本代码"></a>脚本代码</h2><p>脚本ls-st-convergence.sh要和批量任务放在一个文件夹内，静态自洽的INCAR中等号=两边有空格，代码如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/usr/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> A*</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line"></span><br><span class="line">N=$(<span class="built_in">tail</span> -n 2 <span class="variable">$&#123;i&#125;</span>/static/OSZICAR | awk <span class="string">&#x27;NR==1 &#123;print $2&#125;&#x27;</span>)</span><br><span class="line">dE=$(<span class="built_in">tail</span> -n 2 <span class="variable">$&#123;i&#125;</span>/static/OSZICAR | awk <span class="string">&#x27;NR==1 &#123;print $4&#125;&#x27;</span>) </span><br><span class="line">NELM=$(<span class="built_in">cat</span> <span class="variable">$&#123;i&#125;</span>/static/INCAR | awk <span class="string">&#x27;NR==13 &#123;print $3&#125;&#x27;</span>) <span class="comment"># 参考自己的INCAR提取</span></span><br><span class="line">EDIFF=$(<span class="built_in">cat</span> <span class="variable">$&#123;i&#125;</span>/static/INCAR | awk <span class="string">&#x27;NR==1 &#123;print $3&#125;&#x27;</span>) <span class="comment"># 参考自己的INCAR提取</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ <span class="string">&quot;<span class="variable">$&#123;N&#125;</span>&quot;</span> = <span class="string">&quot;<span class="variable">$&#123;NELM&#125;</span>&quot;</span> ];<span class="keyword">then</span></span><br><span class="line">	<span class="built_in">echo</span> <span class="variable">$&#123;i&#125;</span> <span class="variable">$&#123;N&#125;</span> <span class="variable">$&#123;NELM&#125;</span> <span class="variable">$&#123;dE&#125;</span> <span class="variable">$&#123;EDIFF&#125;</span> &gt;&gt; no-st-convergence_result.dat</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">	convergence_result=<span class="string">&quot;No&quot;</span></span><br><span class="line">	<span class="built_in">echo</span> <span class="variable">$&#123;i&#125;</span> <span class="variable">$&#123;N&#125;</span> <span class="variable">$&#123;NELM&#125;</span> <span class="variable">$&#123;dE&#125;</span> <span class="variable">$&#123;EDIFF&#125;</span>  &gt;&gt; yes-st-convergence_result.dat</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line">sed -i <span class="string">&#x27;1i system N NEM dE EDIFF&#x27;</span> no-convergence_result.dat</span><br><span class="line">sed -i <span class="string">&#x27;1i system N NEM dE EDIFF&#x27;</span> yes-convergence_result.dat</span><br></pre></td></tr></table></figure>
+<p>这里不收敛的结构在no-st-convergence_result.dat中，收敛的结果在yes-convergence_result.dat。如果执行脚本时出现下列语句：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed：无法读取 no-st-convergence_result.dat：没有那个文件或目录</span><br></pre></td></tr></table></figure>
+<p>那么恭喜你，你的所有静态自洽计算都是收敛的。</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p>[1] <a target="_blank" rel="noopener" href="https://www.cnblogs.com/kaishirenshi/p/9729800.html">shell中的if语句 - 开始认识 - 博客园</a><br>[2] <a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-comm-awk.html">Linux awk 命令 | 菜鸟教程</a><br>[3] <a target="_blank" rel="noopener" href="https://blog.csdn.net/fengfeifengfei/article/details/40371935">(5条消息) awk妙用（如何取出某行某列的某个元素）_god_is_my的博客-CSDN博客</a></p>
 
       
     </div>
@@ -421,7 +420,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="http://raolixiang-up.github.io/2022/05/12/%E6%9F%A5%E7%9C%8B%E4%BB%BB%E5%8A%A1%E6%94%B6%E6%95%9B%E6%83%85%E5%86%B5/" title="科研代码002-任务收敛情况监控脚本" target="_blank" rel="external">http://raolixiang-up.github.io/2022/05/12/查看任务收敛情况/</a>
+      <a href="http://raolixiang-up.github.io/2022/05/14/cohp%E9%AB%98%E9%80%9A%E9%87%8F%E8%AE%A1%E7%AE%97005-%E9%9D%99%E6%80%81%E8%87%AA%E6%B4%BD%E8%AE%A1%E7%AE%97%E6%98%AF%E5%90%A6%E6%AD%A3%E5%B8%B8%E7%BB%93%E6%9D%9F%E7%9A%84%E7%BB%9F%E8%AE%A1/" title="cohp高通量计算005-静态自洽计算是否正常结束的统计" target="_blank" rel="external">http://raolixiang-up.github.io/2022/05/14/cohp高通量计算005-静态自洽计算是否正常结束的统计/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -467,13 +466,9 @@
   
   <ul class="pager pull-left">
     
-    <li class="prev">
-      <a href="/2022/05/12/cohp%E9%AB%98%E9%80%9A%E9%87%8F%E8%AE%A1%E7%AE%97/" title="cohp高通量计算004-结构优化是否收敛的统计"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
-    </li>
-    
     
     <li class="next">
-      <a href="/2022/05/06/cohp%E9%AB%98%E9%80%9A%E9%87%8F%E8%AE%A1%E7%AE%97003-%E6%89%B9%E9%87%8F%E9%87%8D%E5%91%BD%E5%90%8D/" title="cohp高通量计算003-批量重命名"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2022/05/12/%E7%A7%91%E7%A0%94%E4%BB%A3%E7%A0%81003-%E6%94%B6%E6%95%9B%E6%80%A7%E6%B5%8B%E8%AF%95/" title="科研代码003-收敛性测试"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
