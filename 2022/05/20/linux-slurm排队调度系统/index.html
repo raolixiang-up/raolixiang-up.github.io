@@ -17,18 +17,21 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>raolixiang</title>
-  <meta name="description" content="博观而约取，厚积而薄发">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://raolixiang-up.github.io/index.html">
+  <title>linux-001-slurm和PBS排队调度系统 | raolixiang</title>
+  <meta name="description" content="整理一下slurm和PBS简单使用的教程。slurm:  Slurm 作业调度系统使用指南 - 知乎 Slurm Workload Manager - Quick Start User GuidePBS: PBS作业管理系统使用技巧 | Kevinzjy’s Blog PBS 作业管理系统 - 简书简单的操作，够用即可~~~~~~~~~~~~~~~~~~~~">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux-001-slurm和PBS排队调度系统">
+<meta property="og:url" content="http://raolixiang-up.github.io/2022/05/20/linux-slurm%E6%8E%92%E9%98%9F%E8%B0%83%E5%BA%A6%E7%B3%BB%E7%BB%9F/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="博观而约取，厚积而薄发">
+<meta property="og:description" content="整理一下slurm和PBS简单使用的教程。slurm:  Slurm 作业调度系统使用指南 - 知乎 Slurm Workload Manager - Quick Start User GuidePBS: PBS作业管理系统使用技巧 | Kevinzjy’s Blog PBS 作业管理系统 - 简书简单的操作，够用即可~~~~~~~~~~~~~~~~~~~~">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-05-19T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-05-19T16:11:58.228Z">
 <meta property="article:author" content="raolixiang">
+<meta property="article:tag" content="linux">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://raolixiang-up.github.io/index.html">
+  <link rel="canonical" href="http://raolixiang-up.github.io/2022/05/20/linux-slurm%E6%8E%92%E9%98%9F%E8%B0%83%E5%BA%A6%E7%B3%BB%E7%BB%9F/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -336,43 +339,59 @@
 </aside>
 
   
-  <main class="main" role="main">
   
-  <div class="content article-list">
+  <aside class="sidebar sidebar-toc collapse   in  " id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <nav id="toc" class="article-toc">
+      <h3 class="toc-title">文章目录</h3>
+      
+    </nav>
+  </div>
+</aside>
+
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-linux-slurm排队调度系统" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
+    <div class="article-header">
+      
+        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/05/20/linux-slurm%E6%8E%92%E9%98%9F%E8%B0%83%E5%BA%A6%E7%B3%BB%E7%BB%9F/">linux-001-slurm和PBS排队调度系统</a>
+    <h1 class="article-title" itemprop="name">
+      linux-001-slurm和PBS排队调度系统
     </h1>
   
 
-  </div>
-  
-  <p class="article-meta">
-    <span class="article-date">
+      
+      <div class="article-meta">
+        <span class="article-date">
     <i class="icon icon-calendar-check"></i>
 	<a href="/2022/05/20/linux-slurm%E6%8E%92%E9%98%9F%E8%B0%83%E5%BA%A6%E7%B3%BB%E7%BB%9F/" class="article-date">
-	  <time datetime="2022-05-19T16:00:00.000Z" itemprop="datePublished">5月 20</time>
+	  <time datetime="2022-05-19T16:00:00.000Z" itemprop="datePublished">2022-05-20</time>
 	</a>
 </span>
-    
+        
   <span class="article-category">
     <i class="icon icon-folder"></i>
     <a class="article-category-link" href="/categories/linux/">linux</a>
   </span>
 
-    
+        
   <span class="article-tag">
     <i class="icon icon-tags"></i>
 	<a class="article-tag-link-link" href="/tags/linux/" rel="tag">linux</a>
   </span>
 
 
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/05/20/linux-slurm%E6%8E%92%E9%98%9F%E8%B0%83%E5%BA%A6%E7%B3%BB%E7%BB%9F/#comments" class="article-comment-link">评论</a></span>
-    
+        
+
+	<span class="article-read hidden-xs">
+    	<i class="icon icon-eye-fill" aria-hidden="true"></i>
+    	<span id="/2022/05/20/linux-slurm%E6%8E%92%E9%98%9F%E8%B0%83%E5%BA%A6%E7%B3%BB%E7%BB%9F/" class="leancloud_visitors"  data-flag-title="linux-001-slurm和PBS排队调度系统">0</span>
+    </span>
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/05/20/linux-slurm%E6%8E%92%E9%98%9F%E8%B0%83%E5%BA%A6%E7%B3%BB%E7%BB%9F/#comments" class="article-comment-link">评论</a></span>
+        
 	
 		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 66(字)</span>
 	
@@ -380,435 +399,148 @@
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
 	
 
-  </p>
-</article>
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <p>整理一下slurm和PBS简单使用的教程。<br>slurm:</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/356415669">Slurm 作业调度系统使用指南 - 知乎</a></li>
+<li><a target="_blank" rel="noopener" href="https://slurm.schedmd.com/quickstart.html">Slurm Workload Manager - Quick Start User Guide</a><br>PBS:</li>
+<li><a target="_blank" rel="noopener" href="https://kevinzjy.github.io/2018/08/13/180813-Server-PBS/">PBS作业管理系统使用技巧 | Kevinzjy’s Blog</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/2f6c799ca147">PBS 作业管理系统 - 简书</a><br>简单的操作，够用即可~~~~~~~~~~~~~~~~~~~~</li>
+</ol>
 
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
     
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://raolixiang-up.github.io/2022/05/20/linux-slurm%E6%8E%92%E9%98%9F%E8%B0%83%E5%BA%A6%E7%B3%BB%E7%BB%9F/" title="linux-001-slurm和PBS排队调度系统" target="_blank" rel="external">http://raolixiang-up.github.io/2022/05/20/linux-slurm排队调度系统/</a>
+    </li>
     
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/05/14/cohp%E9%AB%98%E9%80%9A%E9%87%8F%E8%AE%A1%E7%AE%97005-%E9%9D%99%E6%80%81%E8%87%AA%E6%B4%BD%E8%AE%A1%E7%AE%97%E6%98%AF%E5%90%A6%E6%AD%A3%E5%B8%B8%E7%BB%93%E6%9D%9F%E7%9A%84%E7%BB%9F%E8%AE%A1/">cohp高通量计算005-静态自洽计算是否正常结束的统计</a>
-    </h1>
-  
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
 
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/raolixiang-up" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="https://github.com/raolixiang-up/blog-images/blob/master/imagesnotion-avatar-1651151887408.png?raw=true" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/raolixiang-up" target="_blank"><span class="text-dark">raolixiang</span><small class="ml-1x">博观而约取，厚积而薄发</small></a></h3>
+        <div>博观而约取，厚积而薄发</div>
+      </div>
+    </figure>
   </div>
+</div>
+
+
+    </div>
+  </article>
   
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2022/05/14/cohp%E9%AB%98%E9%80%9A%E9%87%8F%E8%AE%A1%E7%AE%97005-%E9%9D%99%E6%80%81%E8%87%AA%E6%B4%BD%E8%AE%A1%E7%AE%97%E6%98%AF%E5%90%A6%E6%AD%A3%E5%B8%B8%E7%BB%93%E6%9D%9F%E7%9A%84%E7%BB%9F%E8%AE%A1/" class="article-date">
-	  <time datetime="2022-05-14T13:24:23.000Z" itemprop="datePublished">5月 14</time>
-	</a>
-</span>
     
-  <span class="article-category">
-    <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a>
-  </span>
-
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
     
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/ML/" rel="tag">ML</a>
-  </span>
+  </section>
 
 
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/05/14/cohp%E9%AB%98%E9%80%9A%E9%87%8F%E8%AE%A1%E7%AE%97005-%E9%9D%99%E6%80%81%E8%87%AA%E6%B4%BD%E8%AE%A1%E7%AE%97%E6%98%AF%E5%90%A6%E6%AD%A3%E5%B8%B8%E7%BB%93%E6%9D%9F%E7%9A%84%E7%BB%9F%E8%AE%A1/#comments" class="article-comment-link">评论</a></span>
-    
-	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 502(字)</span>
-	
-	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2(分)</span>
-	
-
-  </p>
-</article>
-
-    
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/05/12/%E7%A7%91%E7%A0%94%E4%BB%A3%E7%A0%81003-%E6%94%B6%E6%95%9B%E6%80%A7%E6%B5%8B%E8%AF%95/">科研代码003-收敛性测试</a>
-    </h1>
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
   
-
-  </div>
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2022/05/14/cohp%E9%AB%98%E9%80%9A%E9%87%8F%E8%AE%A1%E7%AE%97005-%E9%9D%99%E6%80%81%E8%87%AA%E6%B4%BD%E8%AE%A1%E7%AE%97%E6%98%AF%E5%90%A6%E6%AD%A3%E5%B8%B8%E7%BB%93%E6%9D%9F%E7%9A%84%E7%BB%9F%E8%AE%A1/" title="cohp高通量计算005-静态自洽计算是否正常结束的统计"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+    <li class="toggle-toc">
+      <a class="toggle-btn " data-toggle="collapse" href="#collapseToc" aria-expanded="false" title="文章目录" role="button">    <span>[&nbsp;</span><span>文章目录</span>
+        <i class="text-collapsed icon icon-anchor"></i>
+        <i class="text-in icon icon-close"></i>
+        <span>]</span>
+      </a>
+    </li>
+    
+  </ul>
   
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2022/05/12/%E7%A7%91%E7%A0%94%E4%BB%A3%E7%A0%81003-%E6%94%B6%E6%95%9B%E6%80%A7%E6%B5%8B%E8%AF%95/" class="article-date">
-	  <time datetime="2022-05-12T15:41:17.000Z" itemprop="datePublished">5月 12</time>
-	</a>
-</span>
-    
-  <span class="article-category">
-    <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/%E7%A7%91%E7%A0%94%E4%BB%A3%E7%A0%81/">科研代码</a>
-  </span>
-
-    
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/github/" rel="tag">github</a>
-  </span>
-
-
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/05/12/%E7%A7%91%E7%A0%94%E4%BB%A3%E7%A0%81003-%E6%94%B6%E6%95%9B%E6%80%A7%E6%B5%8B%E8%AF%95/#comments" class="article-comment-link">评论</a></span>
-    
-	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 114(字)</span>
-	
-	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
-	
-
-  </p>
-</article>
-
-    
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/05/12/cohp%E9%AB%98%E9%80%9A%E9%87%8F%E8%AE%A1%E7%AE%97/">cohp高通量计算004-结构优化是否收敛的统计</a>
-    </h1>
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
   
-
-  </div>
   
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2022/05/12/cohp%E9%AB%98%E9%80%9A%E9%87%8F%E8%AE%A1%E7%AE%97/" class="article-date">
-	  <time datetime="2022-05-11T19:53:27.000Z" itemprop="datePublished">5月 12</time>
-	</a>
-</span>
+  <div class="bar-right">
     
-  <span class="article-category">
-    <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a>
-  </span>
-
-    
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/ML/" rel="tag">ML</a>
-  </span>
-
-
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/05/12/cohp%E9%AB%98%E9%80%9A%E9%87%8F%E8%AE%A1%E7%AE%97/#comments" class="article-comment-link">评论</a></span>
-    
-	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 398(字)</span>
-	
-	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
-	
-
-  </p>
-</article>
-
-    
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/05/12/%E6%9F%A5%E7%9C%8B%E4%BB%BB%E5%8A%A1%E6%94%B6%E6%95%9B%E6%83%85%E5%86%B5/">科研代码002-任务收敛情况监控脚本</a>
-    </h1>
-  
-
-  </div>
-  
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2022/05/12/%E6%9F%A5%E7%9C%8B%E4%BB%BB%E5%8A%A1%E6%94%B6%E6%95%9B%E6%83%85%E5%86%B5/" class="article-date">
-	  <time datetime="2022-05-11T16:04:07.000Z" itemprop="datePublished">5月 12</time>
-	</a>
-</span>
-    
-  <span class="article-category">
-    <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/%E7%A7%91%E7%A0%94%E4%BB%A3%E7%A0%81/">科研代码</a>
-  </span>
-
-    
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/github/" rel="tag">github</a>
-  </span>
-
-
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/05/12/%E6%9F%A5%E7%9C%8B%E4%BB%BB%E5%8A%A1%E6%94%B6%E6%95%9B%E6%83%85%E5%86%B5/#comments" class="article-comment-link">评论</a></span>
-    
-	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 857(字)</span>
-	
-	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 4(分)</span>
-	
-
-  </p>
-</article>
-
-    
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/05/06/cohp%E9%AB%98%E9%80%9A%E9%87%8F%E8%AE%A1%E7%AE%97003-%E6%89%B9%E9%87%8F%E9%87%8D%E5%91%BD%E5%90%8D/">cohp高通量计算003-批量重命名</a>
-    </h1>
-  
-
-  </div>
-  
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2022/05/06/cohp%E9%AB%98%E9%80%9A%E9%87%8F%E8%AE%A1%E7%AE%97003-%E6%89%B9%E9%87%8F%E9%87%8D%E5%91%BD%E5%90%8D/" class="article-date">
-	  <time datetime="2022-05-06T01:59:08.000Z" itemprop="datePublished">5月 6</time>
-	</a>
-</span>
-    
-  <span class="article-category">
-    <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a>
-  </span>
-
-    
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/ML/" rel="tag">ML</a>
-  </span>
-
-
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/05/06/cohp%E9%AB%98%E9%80%9A%E9%87%8F%E8%AE%A1%E7%AE%97003-%E6%89%B9%E9%87%8F%E9%87%8D%E5%91%BD%E5%90%8D/#comments" class="article-comment-link">评论</a></span>
-    
-	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 150(字)</span>
-	
-	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
-	
-
-  </p>
-</article>
-
-    
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/05/05/%E7%A7%91%E7%A0%94%E4%BB%A3%E7%A0%81001/">科研代码001-sumo</a>
-    </h1>
-  
-
-  </div>
-  
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2022/05/05/%E7%A7%91%E7%A0%94%E4%BB%A3%E7%A0%81001/" class="article-date">
-	  <time datetime="2022-05-05T13:10:46.000Z" itemprop="datePublished">5月 5</time>
-	</a>
-</span>
-    
-  <span class="article-category">
-    <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/%E7%A7%91%E7%A0%94%E4%BB%A3%E7%A0%81/">科研代码</a>
-  </span>
-
-    
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/github/" rel="tag">github</a>
-  </span>
-
-
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/05/05/%E7%A7%91%E7%A0%94%E4%BB%A3%E7%A0%81001/#comments" class="article-comment-link">评论</a></span>
-    
-	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 174(字)</span>
-	
-	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
-	
-
-  </p>
-</article>
-
-    
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/05/05/shell001/">shell001-反向删除</a>
-    </h1>
-  
-
-  </div>
-  
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2022/05/05/shell001/" class="article-date">
-	  <time datetime="2022-05-04T17:39:45.000Z" itemprop="datePublished">5月 5</time>
-	</a>
-</span>
-    
-  <span class="article-category">
-    <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/shell/">shell</a>
-  </span>
-
-    
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/bash/" rel="tag">bash</a>
-  </span>
-
-
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/05/05/shell001/#comments" class="article-comment-link">评论</a></span>
-    
-	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 460(字)</span>
-	
-	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
-	
-
-  </p>
-</article>
-
-    
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/05/04/%E7%A7%91%E7%A0%94%E8%BF%BD%E8%B8%AA001/">科研追踪001</a>
-    </h1>
-  
-
-  </div>
-  
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2022/05/04/%E7%A7%91%E7%A0%94%E8%BF%BD%E8%B8%AA001/" class="article-date">
-	  <time datetime="2022-05-04T08:28:59.000Z" itemprop="datePublished">5月 4</time>
-	</a>
-</span>
-    
-  <span class="article-category">
-    <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/%E7%A7%91%E7%A0%94%E8%BF%BD%E8%B8%AA/">科研追踪</a>
-  </span>
-
-    
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/%E8%AF%BE%E9%A2%98%E7%BB%84/" rel="tag">课题组</a>
-  </span>
-
-
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/05/04/%E7%A7%91%E7%A0%94%E8%BF%BD%E8%B8%AA001/#comments" class="article-comment-link">评论</a></span>
-    
-	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 178(字)</span>
-	
-	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
-	
-
-  </p>
-</article>
-
-    
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/05/02/cohp%E7%9A%84%E9%AB%98%E9%80%9A%E9%87%8F%E8%AE%A1%E7%AE%97002/">cohp的高通量计算002-爬取POSCAR</a>
-    </h1>
-  
-
-  </div>
-  
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2022/05/02/cohp%E7%9A%84%E9%AB%98%E9%80%9A%E9%87%8F%E8%AE%A1%E7%AE%97002/" class="article-date">
-	  <time datetime="2022-05-02T14:47:33.000Z" itemprop="datePublished">5月 2</time>
-	</a>
-</span>
-    
-  <span class="article-category">
-    <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a>
-  </span>
-
-    
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/ML/" rel="tag">ML</a>
-  </span>
-
-
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/05/02/cohp%E7%9A%84%E9%AB%98%E9%80%9A%E9%87%8F%E8%AE%A1%E7%AE%97002/#comments" class="article-comment-link">评论</a></span>
-    
-	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 832(字)</span>
-	
-	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 3(分)</span>
-	
-
-  </p>
-</article>
-
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
     
   </div>
-
+  </div>
+</nav>
   
-    
-    <nav class="bar bar-footer clearfix" data-stick-bottom>
-        <div class="bar-inner">
-        <ul class="pager pull-left">
-            
-            <li class="prev disabled">
-                <a href="javascript:;">
-                    <i class="icon icon-angle-left"></i>
-                    上一页
-                </a>
-            </li>
-            
-            
-            <li class="next">
-                <a href="/page/2/">
-                    下一页
-                    <i class="icon icon-angle-right"></i>
-                </a>
-            </li>
-            
-        </ul>
-            <div class="total-article bar-right">Page 1 of 2</div>
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>感谢您的支持，我会继续努力的!</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="https://github.com/raolixiang-up/blog-images/blob/master/imageszhifubao.jpg?raw=true" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="https://github.com/raolixiang-up/blog-images/blob/master/imageswenxin.jpg?raw=true" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> 支付宝</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> 微信支付</a>
+              </li>
+            </ul>
+          </div>
         </div>
-    </nav>
-    
- 
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 </main>
 
   <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
@@ -867,6 +599,39 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
    
 
 
+
+
+   
+    
+  # <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//code.bdstatic.com/npm/leancloud-storage@4.12.0/dist/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  var requiredFields = 'mail';
+  requiredFields = requiredFields.split(',');
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: true,
+    appId: 'liE2sEmvKJgu4NlY59BGj8eM-MdYXbMMI',
+    appKey: 'MfkmGWVQjCXnRdvSyBFzVR2P',
+    placeholder: '留下邮箱才可以收到新消息提醒哦~',
+    avatar: 'robohash',
+    meta: meta,
+    pageSize: '10' || 10,
+    enableQQ: 'true',
+	recordIP: 'ture',
+	requiredFields: requiredFields,
+	visitor: true
+  });
+  </script>
+
+     
 
 
 

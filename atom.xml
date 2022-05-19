@@ -6,7 +6,7 @@
   <link href="http://raolixiang-up.github.io/atom.xml" rel="self"/>
   
   <link href="http://raolixiang-up.github.io/"/>
-  <updated>2022-05-14T13:51:02.799Z</updated>
+  <updated>2022-05-19T16:11:58.228Z</updated>
   <id>http://raolixiang-up.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>linux-001-slurm和PBS排队调度系统</title>
+    <link href="http://raolixiang-up.github.io/2022/05/20/linux-slurm%E6%8E%92%E9%98%9F%E8%B0%83%E5%BA%A6%E7%B3%BB%E7%BB%9F/"/>
+    <id>http://raolixiang-up.github.io/2022/05/20/linux-slurm%E6%8E%92%E9%98%9F%E8%B0%83%E5%BA%A6%E7%B3%BB%E7%BB%9F/</id>
+    <published>2022-05-19T16:00:00.000Z</published>
+    <updated>2022-05-19T16:11:58.228Z</updated>
+    
+    <content type="html"><![CDATA[<p>整理一下slurm和PBS简单使用的教程。<br>slurm:</p><ol><li><a href="https://zhuanlan.zhihu.com/p/356415669">Slurm 作业调度系统使用指南 - 知乎</a></li><li><a href="https://slurm.schedmd.com/quickstart.html">Slurm Workload Manager - Quick Start User Guide</a><br>PBS:</li><li><a href="https://kevinzjy.github.io/2018/08/13/180813-Server-PBS/">PBS作业管理系统使用技巧 | Kevinzjy’s Blog</a></li><li><a href="https://www.jianshu.com/p/2f6c799ca147">PBS 作业管理系统 - 简书</a><br>简单的操作，够用即可~~~~~~~~~~~~~~~~~~~~</li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;整理一下slurm和PBS简单使用的教程。&lt;br&gt;slurm:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/356415669&quot;&gt;Slurm 作业调度系统使用指南 - 知乎&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=</summary>
+      
+    
+    
+    
+    <category term="linux" scheme="http://raolixiang-up.github.io/categories/linux/"/>
+    
+    
+    <category term="linux" scheme="http://raolixiang-up.github.io/tags/linux/"/>
+    
+  </entry>
   
   <entry>
     <title>cohp高通量计算005-静态自洽计算是否正常结束的统计</title>
