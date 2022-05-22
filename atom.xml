@@ -6,7 +6,7 @@
   <link href="http://raolixiang-up.github.io/atom.xml" rel="self"/>
   
   <link href="http://raolixiang-up.github.io/"/>
-  <updated>2022-05-19T16:28:07.219Z</updated>
+  <updated>2022-05-22T13:01:42.654Z</updated>
   <id>http://raolixiang-up.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>科研代码004-vasp输入文件POTCAR的自动生成</title>
+    <link href="http://raolixiang-up.github.io/2022/05/22/%E7%A7%91%E7%A0%94%E4%BB%A3%E7%A0%81004-vasp%E8%BE%93%E5%85%A5%E6%96%87%E4%BB%B6POTCAR%E7%9A%84%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90/"/>
+    <id>http://raolixiang-up.github.io/2022/05/22/%E7%A7%91%E7%A0%94%E4%BB%A3%E7%A0%81004-vasp%E8%BE%93%E5%85%A5%E6%96%87%E4%BB%B6POTCAR%E7%9A%84%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90/</id>
+    <published>2022-05-22T12:54:06.000Z</published>
+    <updated>2022-05-22T13:01:42.654Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>vasp输入文件POTCAR的合并生成，网上很多资料简单整理一下。自己写代码也可以，李强博士已经写好了，如下所示：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/usr/bin/bash</span></span><br><span class="line"><span class="comment"># Create a GGA_PAW POTCAR file</span></span><br><span class="line"><span class="comment"># by BigBro  </span></span><br><span class="line"><span class="comment"># To Use it： potcar.sh Cu C H O</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Define local potpaw_GGA pseudopotentialrepository:</span></span><br><span class="line">repo=<span class="string">&quot;/THFS/home/iciq-lq/bin/pot&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Check if older version of POTCAR ispresent</span></span><br><span class="line"><span class="keyword">if</span> [ -f POTCAR ] ; <span class="keyword">then</span></span><br><span class="line"><span class="built_in">mv</span> -f POTCAR old-POTCAR</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot; ** Warning: old POTCAR file found and renamed to &#x27;old-POTCAR&#x27;.&quot;</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Main loop - concatenate the appropriatePOTCARs (or archives)</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> $*</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line"><span class="keyword">if</span> <span class="built_in">test</span> -f <span class="variable">$repo</span>/<span class="variable">$i</span>/POTCAR ; <span class="keyword">then</span></span><br><span class="line"><span class="built_in">cat</span> <span class="variable">$repo</span>/<span class="variable">$i</span>/POTCAR&gt;&gt; POTCAR</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot; ** Warning: No suitable POTCAR for element &#x27;<span class="variable">$i</span>&#x27; found!! Skipped thiselement.&quot;</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure><p>简单设置一下POTCAR文件所在的路径即可，具体使用见：<a href="https://www.bigbrosci.com/2017/12/21/A05/">自动生成POTCAR的脚本 | Learn VASP The Hard Way</a><br>因为这是比较简单的操作，很多软件都已经具有这个功能，例如vaspkit,qvasp等软件。</p><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p>[1] <a href="https://www.bigbrosci.com/2017/12/21/A05/">自动生成POTCAR的脚本 | Learn VASP The Hard Way</a><br>[2] <a href="https://vaspkit.com/">Overview — VASPKIT 1.3 documentation</a><br>[3] <a href="https://www.shangyexinzhi.com/article/528678.html">qvasp更新至v2.2版本（卷纳米管等功能）_学术之友-商业新知</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;代码&quot;&gt;&lt;a href=&quot;#代码&quot; class=&quot;headerlink&quot; title=&quot;代码&quot;&gt;&lt;/a&gt;代码&lt;/h2&gt;&lt;p&gt;vasp输入文件POTCAR的合并生成，网上很多资料简单整理一下。自己写代码也可以，李强博士已经写好了，如下所示：&lt;/p&gt;
+&lt;figure </summary>
+      
+    
+    
+    
+    <category term="科研代码" scheme="http://raolixiang-up.github.io/categories/%E7%A7%91%E7%A0%94%E4%BB%A3%E7%A0%81/"/>
+    
+    
+    <category term="shell" scheme="http://raolixiang-up.github.io/tags/shell/"/>
+    
+  </entry>
   
   <entry>
     <title>linux-001-slurm和PBS排队调度系统</title>
