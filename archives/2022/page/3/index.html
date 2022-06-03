@@ -17,21 +17,18 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>linux-001-slurm和PBS排队调度系统 | raolixiang</title>
-  <meta name="description" content="整理一下slurm和PBS简单使用的教程。slurm:  Slurm 作业调度系统使用指南 - 知乎 Slurm Workload Manager - Quick Start User GuidePBS: PBS作业管理系统使用技巧 | Kevinzjy’s Blog PBS 作业管理系统 - 简书简单的操作，够用即可~~~~~~~~~~~~~~~~~~~~">
-<meta property="og:type" content="article">
-<meta property="og:title" content="linux-001-slurm和PBS排队调度系统">
-<meta property="og:url" content="http://raolixiang-up.github.io/2022/05/20/linux-slurm%E6%8E%92%E9%98%9F%E8%B0%83%E5%BA%A6%E7%B3%BB%E7%BB%9F/index.html">
+  <title>归档: 2022 | raolixiang</title>
+  <meta name="description" content="博观而约取，厚积而薄发">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://raolixiang-up.github.io/archives/2022/page/3/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="整理一下slurm和PBS简单使用的教程。slurm:  Slurm 作业调度系统使用指南 - 知乎 Slurm Workload Manager - Quick Start User GuidePBS: PBS作业管理系统使用技巧 | Kevinzjy’s Blog PBS 作业管理系统 - 简书简单的操作，够用即可~~~~~~~~~~~~~~~~~~~~">
+<meta property="og:description" content="博观而约取，厚积而薄发">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-05-19T16:27:00.000Z">
-<meta property="article:modified_time" content="2022-05-19T16:28:07.219Z">
 <meta property="article:author" content="raolixiang">
-<meta property="article:tag" content="slurm-PBS">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://raolixiang-up.github.io/2022/05/20/linux-slurm%E6%8E%92%E9%98%9F%E8%B0%83%E5%BA%A6%E7%B3%BB%E7%BB%9F/index.html">
+  <link rel="canonical" href="http://raolixiang-up.github.io/archives/2022/page/3/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -340,211 +337,75 @@
 
   
   
-  <aside class="sidebar sidebar-toc collapse   in  " id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
-  <div class="slimContent">
-    <nav id="toc" class="article-toc">
-      <h3 class="toc-title">文章目录</h3>
-      
-    </nav>
-  </div>
-</aside>
-
 <main class="main" role="main">
-  <div class="content">
-  <article id="post-linux-slurm排队调度系统" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  	<article class="content article article-archives article-type-list" itemscope="">
+	    <header class="article-header">
+	      <h1 itemprop="title">归档: 2022</h1>
+	      <p class="text-muted">共 21 篇文章</p>
+	    </header>
+	    <div class="article-body">
+	      
+  
+  
     
-    <div class="article-header">
+    
       
-        
-  
-    <h1 class="article-title" itemprop="name">
-      linux-001-slurm和PBS排队调度系统
-    </h1>
-  
-
       
-      <div class="article-meta">
-        <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2022/05/20/linux-slurm%E6%8E%92%E9%98%9F%E8%B0%83%E5%BA%A6%E7%B3%BB%E7%BB%9F/" class="article-date">
-	  <time datetime="2022-05-19T16:27:00.000Z" itemprop="datePublished">2022-05-20</time>
-	</a>
-</span>
-        
-  <span class="article-category">
-    <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/linux/">linux</a>
-  </span>
-
-        
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/slurm-PBS/" rel="tag">slurm-PBS</a>
-  </span>
-
-
-        
-
-	<span class="article-read hidden-xs">
-    	<i class="icon icon-eye-fill" aria-hidden="true"></i>
-    	<span id="/2022/05/20/linux-slurm%E6%8E%92%E9%98%9F%E8%B0%83%E5%BA%A6%E7%B3%BB%E7%BB%9F/" class="leancloud_visitors"  data-flag-title="linux-001-slurm和PBS排队调度系统">0</span>
-    </span>
-
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/05/20/linux-slurm%E6%8E%92%E9%98%9F%E8%B0%83%E5%BA%A6%E7%B3%BB%E7%BB%9F/#comments" class="article-comment-link">评论</a></span>
-        
-	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 66(字)</span>
-	
-	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
-	
-
-      </div>
-    </div>
-    <div class="article-entry marked-body" itemprop="articleBody">
-      
-        <p>整理一下slurm和PBS简单使用的教程。<br>slurm:</p>
-<ol>
-<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/356415669">Slurm 作业调度系统使用指南 - 知乎</a></li>
-<li><a target="_blank" rel="noopener" href="https://slurm.schedmd.com/quickstart.html">Slurm Workload Manager - Quick Start User Guide</a><br>PBS:</li>
-<li><a target="_blank" rel="noopener" href="https://kevinzjy.github.io/2018/08/13/180813-Server-PBS/">PBS作业管理系统使用技巧 | Kevinzjy’s Blog</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/2f6c799ca147">PBS 作业管理系统 - 简书</a><br>简单的操作，够用即可~~~~~~~~~~~~~~~~~~~~</li>
-</ol>
-
-      
-    </div>
-    <div class="article-footer">
-      <blockquote class="mt-2x">
-  <ul class="post-copyright list-unstyled">
-    
-    <li class="post-copyright-link hidden-xs">
-      <strong>本文链接：</strong>
-      <a href="http://raolixiang-up.github.io/2022/05/20/linux-slurm%E6%8E%92%E9%98%9F%E8%B0%83%E5%BA%A6%E7%B3%BB%E7%BB%9F/" title="linux-001-slurm和PBS排队调度系统" target="_blank" rel="external">http://raolixiang-up.github.io/2022/05/20/linux-slurm排队调度系统/</a>
-    </li>
-    
-    <li class="post-copyright-license">
-      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
-    </li>
-  </ul>
-</blockquote>
-
-
-<div class="panel panel-default panel-badger">
-  <div class="panel-body">
-    <figure class="media">
-      <div class="media-left">
-        <a href="https://github.com/raolixiang-up" target="_blank" class="img-burn thumb-sm visible-lg">
-          <img src="https://github.com/raolixiang-up/blog-images/blob/master/imagesnotion-avatar-1651151887408.png?raw=true" class="img-rounded w-full" alt="">
-        </a>
-      </div>
-      <div class="media-body">
-        <h3 class="media-heading"><a href="https://github.com/raolixiang-up" target="_blank"><span class="text-dark">raolixiang</span><small class="ml-1x">博观而约取，厚积而薄发</small></a></h3>
-        <div>博观而约取，厚积而薄发</div>
-      </div>
-    </figure>
-  </div>
-</div>
-
-
-    </div>
-  </article>
-  
-    
-  <section id="comments">
-  	
-      <div id="vcomments"></div>
-    
-  </section>
-
-
-  
-</div>
-
-  <nav class="bar bar-footer clearfix" data-stick-bottom>
-  <div class="bar-inner">
-  
-  <ul class="pager pull-left">
-    
-    <li class="prev">
-      <a href="/2022/05/22/%E7%A7%91%E7%A0%94%E4%BB%A3%E7%A0%81004-vasp%E8%BE%93%E5%85%A5%E6%96%87%E4%BB%B6POTCAR%E7%9A%84%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90/" title="科研代码004-vasp输入文件POTCAR的自动生成"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
-    </li>
-    
-    
-    <li class="next">
-      <a href="/2022/05/14/cohp%E9%AB%98%E9%80%9A%E9%87%8F%E8%AE%A1%E7%AE%97005-%E9%9D%99%E6%80%81%E8%87%AA%E6%B4%BD%E8%AE%A1%E7%AE%97%E6%98%AF%E5%90%A6%E6%AD%A3%E5%B8%B8%E7%BB%93%E6%9D%9F%E7%9A%84%E7%BB%9F%E8%AE%A1/" title="cohp高通量计算005-静态自洽计算是否正常结束的统计"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
-    </li>
-    
-    
-    <li class="toggle-toc">
-      <a class="toggle-btn " data-toggle="collapse" href="#collapseToc" aria-expanded="false" title="文章目录" role="button">    <span>[&nbsp;</span><span>文章目录</span>
-        <i class="text-collapsed icon icon-anchor"></i>
-        <i class="text-in icon icon-close"></i>
-        <span>]</span>
-      </a>
-    </li>
-    
-  </ul>
-  
-  
-  <!-- Button trigger modal -->
-  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
-  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
-    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
-  </div> -->
-  
-  
-  <div class="bar-right">
-    
-    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
-    
-  </div>
-  </div>
-</nav>
-  
-<!-- Modal -->
-<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content donate">
-      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      <div class="modal-body">
-        <div class="donate-box">
-          <div class="donate-head">
-            <p>感谢您的支持，我会继续努力的!</p>
-          </div>
-          <div class="tab-content">
-            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
-              <div class="donate-payimg">
-                <img src="https://github.com/raolixiang-up/blog-images/blob/master/imageszhifubao.jpg?raw=true" alt="扫码支持" title="扫一扫" />
-              </div>
-              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
-              <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦</p>
-            </div>
-            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
-              <div class="donate-payimg">
-                <img src="https://github.com/raolixiang-up/blog-images/blob/master/imageswenxin.jpg?raw=true" alt="扫码支持" title="扫一扫" />
-              </div>
-              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
-              <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
-            </div>
-          </div>
-          <div class="donate-footer">
-            <ul class="nav nav-tabs nav-justified" role="tablist">
-              <li role="presentation" class="active">
-                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> 支付宝</a>
-              </li>
-              <li role="presentation" class="">
-                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> 微信支付</a>
-              </li>
-            </ul>
-          </div>
+      <section class="panel panel-default b-no">
+        <div class="panel-heading" role="tab">
+          <h3 class="panel-title">
+            <a data-toggle="collapse" href="#collapse2022" aria-expanded="true">
+              <i class="icon icon-calendar-plus text-active"></i><i class="icon icon-calendar-minus text"></i>
+              2022
+            </a>
+            <!-- <a href="/archives/2022" class="archive-year">2022</a> -->
+          </h3>
         </div>
-      </div>
-    </div>
-  </div>
-</div>
+        <div id="collapse2022" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading2022">
+        <div class="panel-body">
+          <div class="collection">
+    
+    
+<a href="/2022/04/28/hello-world/" class="collection-item"   itemprop="url">
+  <time datetime="2022-04-27T20:38:01.389Z" itemprop="datePublished">2022-04-28</time>
+  <span>&nbsp;&nbsp;&nbsp;</span> 模板
+</a>
 
 
+  
+  
+    </div></div></div></section>
+  
 
+	    </div>
+  	</article>
+  	
+    
+    <nav class="bar bar-footer clearfix" data-stick-bottom>
+        <div class="bar-inner">
+        <ul class="pager pull-left">
+            
+            <li class="prev">
+                <a href="/archives/2022/page/2/">
+                    <i class="icon icon-angle-left"></i>
+                    上一页
+                </a>
+            </li>
+            
+            
+            <li class="next disabled">
+                <a href="javascript:;">
+                    下一页
+                    <i class="icon icon-angle-right"></i>                    
+                </a>
+            </li>
+            
+        </ul>
+            <div class="total-article bar-right">Page 3 of 3</div>
+        </div>
+    </nav>
+    
+ 	
 </main>
 
   <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
@@ -599,43 +460,6 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
 
-
-   
-
-
-
-
-   
-    
-  # <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <script src="//code.bdstatic.com/npm/leancloud-storage@4.12.0/dist/av-min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/valine"></script>
-  <script type="text/javascript">
-  var GUEST = ['nick', 'mail', 'link'];
-  var meta = 'nick,mail,link';
-  meta = meta.split(',').filter(function(item) {
-    return GUEST.indexOf(item) > -1;
-  });
-  var requiredFields = 'mail';
-  requiredFields = requiredFields.split(',');
-  new Valine({
-    el: '#vcomments',
-    verify: false,
-    notify: true,
-    appId: 'liE2sEmvKJgu4NlY59BGj8eM-MdYXbMMI',
-    appKey: 'MfkmGWVQjCXnRdvSyBFzVR2P',
-    placeholder: '留下邮箱才可以收到新消息提醒哦~',
-    avatar: 'robohash',
-    meta: meta,
-    pageSize: '10' || 10,
-    enableQQ: 'true',
-	recordIP: 'ture',
-	requiredFields: requiredFields,
-	visitor: true
-  });
-  </script>
-
-     
 
 
 

@@ -17,21 +17,21 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>linux-001-slurm和PBS排队调度系统 | raolixiang</title>
-  <meta name="description" content="整理一下slurm和PBS简单使用的教程。slurm:  Slurm 作业调度系统使用指南 - 知乎 Slurm Workload Manager - Quick Start User GuidePBS: PBS作业管理系统使用技巧 | Kevinzjy’s Blog PBS 作业管理系统 - 简书简单的操作，够用即可~~~~~~~~~~~~~~~~~~~~">
+  <title>vasp001-固定轴优化 | raolixiang</title>
+  <meta name="description" content="vasp固定轴优化，将网上的资料总结一下。（1）修改constr_cell_relax.F，编译生成对应的vasp执行文件，见VASP 固定基矢优化结构 - chempeng修改c方向为例，修改代码如下: 123456789101112131415161718192021222324252627282930313233343536373839404142434445!---------------">
 <meta property="og:type" content="article">
-<meta property="og:title" content="linux-001-slurm和PBS排队调度系统">
-<meta property="og:url" content="http://raolixiang-up.github.io/2022/05/20/linux-slurm%E6%8E%92%E9%98%9F%E8%B0%83%E5%BA%A6%E7%B3%BB%E7%BB%9F/index.html">
+<meta property="og:title" content="vasp001-固定轴优化">
+<meta property="og:url" content="http://raolixiang-up.github.io/2022/06/03/vasp001-%E5%9B%BA%E5%AE%9A%E8%BD%B4%E4%BC%98%E5%8C%96/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="整理一下slurm和PBS简单使用的教程。slurm:  Slurm 作业调度系统使用指南 - 知乎 Slurm Workload Manager - Quick Start User GuidePBS: PBS作业管理系统使用技巧 | Kevinzjy’s Blog PBS 作业管理系统 - 简书简单的操作，够用即可~~~~~~~~~~~~~~~~~~~~">
+<meta property="og:description" content="vasp固定轴优化，将网上的资料总结一下。（1）修改constr_cell_relax.F，编译生成对应的vasp执行文件，见VASP 固定基矢优化结构 - chempeng修改c方向为例，修改代码如下: 123456789101112131415161718192021222324252627282930313233343536373839404142434445!---------------">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-05-19T16:27:00.000Z">
-<meta property="article:modified_time" content="2022-05-19T16:28:07.219Z">
+<meta property="article:published_time" content="2022-06-03T13:28:46.000Z">
+<meta property="article:modified_time" content="2022-06-03T14:02:19.188Z">
 <meta property="article:author" content="raolixiang">
-<meta property="article:tag" content="slurm-PBS">
+<meta property="article:tag" content="vasp">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://raolixiang-up.github.io/2022/05/20/linux-slurm%E6%8E%92%E9%98%9F%E8%B0%83%E5%BA%A6%E7%B3%BB%E7%BB%9F/index.html">
+  <link rel="canonical" href="http://raolixiang-up.github.io/2022/06/03/vasp001-%E5%9B%BA%E5%AE%9A%E8%BD%B4%E4%BC%98%E5%8C%96/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -351,14 +351,14 @@
 
 <main class="main" role="main">
   <div class="content">
-  <article id="post-linux-slurm排队调度系统" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-vasp001-固定轴优化" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      linux-001-slurm和PBS排队调度系统
+      vasp001-固定轴优化
     </h1>
   
 
@@ -366,20 +366,20 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2022/05/20/linux-slurm%E6%8E%92%E9%98%9F%E8%B0%83%E5%BA%A6%E7%B3%BB%E7%BB%9F/" class="article-date">
-	  <time datetime="2022-05-19T16:27:00.000Z" itemprop="datePublished">2022-05-20</time>
+	<a href="/2022/06/03/vasp001-%E5%9B%BA%E5%AE%9A%E8%BD%B4%E4%BC%98%E5%8C%96/" class="article-date">
+	  <time datetime="2022-06-03T13:28:46.000Z" itemprop="datePublished">2022-06-03</time>
 	</a>
 </span>
         
   <span class="article-category">
     <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/linux/">linux</a>
+    <a class="article-category-link" href="/categories/vasp/">vasp</a>
   </span>
 
         
   <span class="article-tag">
     <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/slurm-PBS/" rel="tag">slurm-PBS</a>
+	<a class="article-tag-link-link" href="/tags/vasp/" rel="tag">vasp</a>
   </span>
 
 
@@ -387,29 +387,25 @@
 
 	<span class="article-read hidden-xs">
     	<i class="icon icon-eye-fill" aria-hidden="true"></i>
-    	<span id="/2022/05/20/linux-slurm%E6%8E%92%E9%98%9F%E8%B0%83%E5%BA%A6%E7%B3%BB%E7%BB%9F/" class="leancloud_visitors"  data-flag-title="linux-001-slurm和PBS排队调度系统">0</span>
+    	<span id="/2022/06/03/vasp001-%E5%9B%BA%E5%AE%9A%E8%BD%B4%E4%BC%98%E5%8C%96/" class="leancloud_visitors"  data-flag-title="vasp001-固定轴优化">0</span>
     </span>
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/05/20/linux-slurm%E6%8E%92%E9%98%9F%E8%B0%83%E5%BA%A6%E7%B3%BB%E7%BB%9F/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/06/03/vasp001-%E5%9B%BA%E5%AE%9A%E8%BD%B4%E4%BC%98%E5%8C%96/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 66(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 554(字)</span>
 	
 	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2(分)</span>
 	
 
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <p>整理一下slurm和PBS简单使用的教程。<br>slurm:</p>
-<ol>
-<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/356415669">Slurm 作业调度系统使用指南 - 知乎</a></li>
-<li><a target="_blank" rel="noopener" href="https://slurm.schedmd.com/quickstart.html">Slurm Workload Manager - Quick Start User Guide</a><br>PBS:</li>
-<li><a target="_blank" rel="noopener" href="https://kevinzjy.github.io/2018/08/13/180813-Server-PBS/">PBS作业管理系统使用技巧 | Kevinzjy’s Blog</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/2f6c799ca147">PBS 作业管理系统 - 简书</a><br>简单的操作，够用即可~~~~~~~~~~~~~~~~~~~~</li>
-</ol>
+        <p>vasp固定轴优化，将网上的资料总结一下。<br>（1）修改constr_cell_relax.F，编译生成对应的vasp执行文件，见<a target="_blank" rel="noopener" href="https://chempeng.github.io/post/2018/03/19/vasp-%E5%9B%BA%E5%AE%9A%E5%9F%BA%E7%9F%A2%E4%BC%98%E5%8C%96%E7%BB%93%E6%9E%84/">VASP 固定基矢优化结构 - chempeng</a><br>修改c方向为例，修改代码如下:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">!-----------------------------------------------------------------------</span><br><span class="line">!</span><br><span class="line">! At present, VASP does not allow to relax the cellshape selectively</span><br><span class="line">! i.e. <span class="keyword">for</span> instance only cell relaxation <span class="keyword">in</span> x direction.</span><br><span class="line">! To be more precisse, this behaviour can not be achived via the INCAR</span><br><span class="line">! or POSCAR file.</span><br><span class="line">! However, it is possible to <span class="built_in">set</span> selected components of the stress tensor</span><br><span class="line">! to zero.</span><br><span class="line">! The most conveninent position to <span class="keyword">do</span> this is the routines</span><br><span class="line">! CONSTR_CELL_RELAX  (constraint cell relaxation).</span><br><span class="line">! FCELL contains the forces on the basis vectors.</span><br><span class="line">! These forces are used to modify the basis vectors according</span><br><span class="line">! to the following equations:</span><br><span class="line">!</span><br><span class="line">!      A_OLD(1:3,1:3)=A(1:3,1:3) ! F90 style</span><br><span class="line">!      DO J=1,3</span><br><span class="line">!      DO I=1,3</span><br><span class="line">!      DO K=1,3</span><br><span class="line">!        A(I,J)=A(I,J) + FCELL(I,K)*A_OLD(K,J)*STEP_SIZE</span><br><span class="line">!      ENDDO</span><br><span class="line">!      ENDDO</span><br><span class="line">!      ENDDO</span><br><span class="line">! <span class="built_in">where</span> A holds the basis vectors (<span class="keyword">in</span> cartesian coordinates).</span><br><span class="line">!</span><br><span class="line">!-----------------------------------------------------------------------</span><br><span class="line"></span><br><span class="line">      SUBROUTINE CONSTR_CELL_RELAX(FCELL)</span><br><span class="line">      USE prec</span><br><span class="line">      REAL(q) FCELL(3,3)</span><br><span class="line">      DO I=1,3</span><br><span class="line">        FCELL(3,I)=0</span><br><span class="line">        FCELL(I,3)=0</span><br><span class="line">      ENDDO</span><br><span class="line">!     just one simple example</span><br><span class="line">!     relaxation <span class="keyword">in</span> x directions only</span><br><span class="line">!      SAVE=FCELL(1,1)</span><br><span class="line">!      FCELL=0   ! F90 style: <span class="built_in">set</span> the whole array to zero</span><br><span class="line">!      FCELL(1,1)=SAVE</span><br><span class="line">!     relaxation <span class="keyword">in</span> z direction only</span><br><span class="line">!      SAVE=FCELL(3,3)</span><br><span class="line">!      FCELL=0   ! F90 style: <span class="built_in">set</span> the whole array to zero</span><br><span class="line">!      FCELL(3,3)=SAVE</span><br><span class="line"></span><br><span class="line">      RETURN</span><br><span class="line">      END SUBROUTINE</span><br></pre></td></tr></table></figure>
+<p>然后重新编译生成vasp执行文件即可。对于其他方向晶格基矢的修改同理：对于a方向基矢，将 FCELL(3,I) 和 FCELL(I,3) 分别改为 FCELL(1,I) 和 FCELL(I,1) ；对于b方向基矢，则分别改为 FCELL(2,I) 和 FCELL(I,2)<br>（2）一次编译需要配置文件控制，见<a target="_blank" rel="noopener" href="https://github.com/Chengcheng-Xiao/VASP_OPT_AXIS">Chengcheng-Xiao/VASP_OPT_AXIS: Fix lattice component(s) during relaxation in VASP</a><br>具体步骤参考链接，我测试了一下肖博士的第一种方法，其中需要注意的是OPTCELL文件数字中间如果有空格则优化有问题，没有空格正常。其次推荐教程中第二种方法，只需要在INCAR中加入IOPTCELL参数即可，不引入其他文件。<br>参考文献<br>[1] <a target="_blank" rel="noopener" href="https://chempeng.github.io/post/2018/03/19/vasp-%E5%9B%BA%E5%AE%9A%E5%9F%BA%E7%9F%A2%E4%BC%98%E5%8C%96%E7%BB%93%E6%9E%84/">VASP 固定基矢优化结构 - chempeng</a><br>[2] <a target="_blank" rel="noopener" href="https://github.com/Chengcheng-Xiao/VASP_OPT_AXIS">Chengcheng-Xiao/VASP_OPT_AXIS: Fix lattice component(s) during relaxation in VASP</a><br>[3] <a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/fkoqZisI2mPTha0WfxhcLg">VASP固定基矢优化结构最新方法更新</a><br>[4] <a target="_blank" rel="noopener" href="http://blog.wangruixing.cn/2019/05/05/constr/">VASP固定基矢优化结构方法 | 世事如棋</a><br>[5] <a target="_blank" rel="noopener" href="http://muchong.com/html/201107/3427823_2.html">VASP并行可执行软件包，可对晶胞参数进行部分优化 - 第 2 页 - 第一原理 - 小木虫 - 学术 科研 互动社区</a></p>
 
       
     </div>
@@ -419,7 +415,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="http://raolixiang-up.github.io/2022/05/20/linux-slurm%E6%8E%92%E9%98%9F%E8%B0%83%E5%BA%A6%E7%B3%BB%E7%BB%9F/" title="linux-001-slurm和PBS排队调度系统" target="_blank" rel="external">http://raolixiang-up.github.io/2022/05/20/linux-slurm排队调度系统/</a>
+      <a href="http://raolixiang-up.github.io/2022/06/03/vasp001-%E5%9B%BA%E5%AE%9A%E8%BD%B4%E4%BC%98%E5%8C%96/" title="vasp001-固定轴优化" target="_blank" rel="external">http://raolixiang-up.github.io/2022/06/03/vasp001-固定轴优化/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -465,13 +461,9 @@
   
   <ul class="pager pull-left">
     
-    <li class="prev">
-      <a href="/2022/05/22/%E7%A7%91%E7%A0%94%E4%BB%A3%E7%A0%81004-vasp%E8%BE%93%E5%85%A5%E6%96%87%E4%BB%B6POTCAR%E7%9A%84%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90/" title="科研代码004-vasp输入文件POTCAR的自动生成"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
-    </li>
-    
     
     <li class="next">
-      <a href="/2022/05/14/cohp%E9%AB%98%E9%80%9A%E9%87%8F%E8%AE%A1%E7%AE%97005-%E9%9D%99%E6%80%81%E8%87%AA%E6%B4%BD%E8%AE%A1%E7%AE%97%E6%98%AF%E5%90%A6%E6%AD%A3%E5%B8%B8%E7%BB%93%E6%9D%9F%E7%9A%84%E7%BB%9F%E8%AE%A1/" title="cohp高通量计算005-静态自洽计算是否正常结束的统计"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2022/05/22/%E7%A7%91%E7%A0%94%E4%BB%A3%E7%A0%81004-vasp%E8%BE%93%E5%85%A5%E6%96%87%E4%BB%B6POTCAR%E7%9A%84%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90/" title="科研代码004-vasp输入文件POTCAR的自动生成"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
