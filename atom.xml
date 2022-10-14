@@ -6,7 +6,7 @@
   <link href="http://raolixiang-up.github.io/atom.xml" rel="self"/>
   
   <link href="http://raolixiang-up.github.io/"/>
-  <updated>2022-07-15T04:04:42.274Z</updated>
+  <updated>2022-10-14T16:09:57.326Z</updated>
   <id>http://raolixiang-up.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>科研代码005-lobsterpy</title>
+    <link href="http://raolixiang-up.github.io/2022/10/14/%E7%A7%91%E7%A0%94%E4%BB%A3%E7%A0%81005-lobsterpy/"/>
+    <id>http://raolixiang-up.github.io/2022/10/14/%E7%A7%91%E7%A0%94%E4%BB%A3%E7%A0%81005-lobsterpy/</id>
+    <published>2022-10-14T15:53:52.000Z</published>
+    <updated>2022-10-14T16:09:57.326Z</updated>
+    
+    <content type="html"><![CDATA[<p>lobsterpy为辅助计算COHP的工具，非常简便好用，网址为：<a href="https://github.com/JaGeo/LobsterPy">JaGeo/LobsterPy: Package to automatically analyze Lobster runs</a><br>对于COHP的计算分析相关的帖子已经很多在这里整理一下：</p><ol><li><a href="https://www.bilibili.com/video/BV1Q4411s7AL/?spm_id_from=333.999.0.0&vd_source=a3d30bedf09a03ccbaa078f26da9bdf4">固体与表面第一性原理计算教学14，电子结构分析(六)COOP, COHP_哔哩哔哩_bilibili</a></li><li><a href="http://blog.wangruixing.cn/2019/04/22/cohp/">COOP和COHP简单原理 | 世事如棋</a></li><li><a href="http://www.cohp.de/">COHP Homepage</a><br>以上三个网址可以帮我们掌握COHP基础知识和基本的计算，浪里个浪~~~~~~~~完结</li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;lobsterpy为辅助计算COHP的工具，非常简便好用，网址为：&lt;a href=&quot;https://github.com/JaGeo/LobsterPy&quot;&gt;JaGeo/LobsterPy: Package to automatically analyze Lobster r</summary>
+      
+    
+    
+    
+    <category term="科研代码" scheme="http://raolixiang-up.github.io/categories/%E7%A7%91%E7%A0%94%E4%BB%A3%E7%A0%81/"/>
+    
+    
+    <category term="python" scheme="http://raolixiang-up.github.io/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>vasp003-能带计算</title>
@@ -481,31 +505,6 @@
       
     <summary type="html">&lt;h2 id=&quot;文章图片插入&quot;&gt;&lt;a href=&quot;#文章图片插入&quot; class=&quot;headerlink&quot; title=&quot;文章图片插入&quot;&gt;&lt;/a&gt;文章图片插入&lt;/h2&gt;&lt;p&gt;写博客过程遇到需要图片展示，因此写一个图片插入的教程。&lt;/p&gt;
 &lt;h3 id=&quot;问题检索&quot;&gt;&lt;a href=</summary>
-      
-    
-    
-    
-    <category term="hexo博客" scheme="http://raolixiang-up.github.io/categories/hexo%E5%8D%9A%E5%AE%A2/"/>
-    
-    
-    <category term="hexo" scheme="http://raolixiang-up.github.io/tags/hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>hexo个人博客(003)-文章目录生成</title>
-    <link href="http://raolixiang-up.github.io/2022/04/29/hexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E7%94%9F%E6%88%90/"/>
-    <id>http://raolixiang-up.github.io/2022/04/29/hexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E7%94%9F%E6%88%90/</id>
-    <published>2022-04-28T19:35:26.000Z</published>
-    <updated>2022-04-29T15:18:11.617Z</updated>
-    
-    <content type="html"><![CDATA[<p>小白一枚，一直想搭建一个自己保存自己学习工作生活记录的博客。得意于互联网的蓬勃发展，提供各种学习资料，如愿搭建了一个。</p><h2 id="文章目录生成"><a href="#文章目录生成" class="headerlink" title="文章目录生成"></a>文章目录生成</h2><p>已经写了两个关于hexo博客的帖子，使用过程中发现没有文章目录生成。</p><h3 id="问题检索"><a href="#问题检索" class="headerlink" title="问题检索"></a>问题检索</h3><p>检索关键词“hexo pure toc文章目录”，谷歌搜索第一个帖子解决问题</p><h3 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题"></a>解决问题</h3><p>这个问题是在网址（<a href="https://github.com/cofess/hexo-theme-pure/issues/%EF%BC%89%E9%87%8C%E7%9A%84%E7%AC%AC33%E5%92%8C125%E4%B8%AA%E9%97%AE%E9%A2%98%EF%BC%8C%E5%9C%A8%E9%97%AE%E9%A2%9833%E9%87%8C%E6%8F%90%E4%BE%9B%E4%BA%86%E8%A7%A3%E5%86%B3%E6%96%B9%E5%BC%8F%EF%BC%8C">https://github.com/cofess/hexo-theme-pure/issues/）里的第33和125个问题，在问题33里提供了解决方式，</a><br>解决问题流程如下所示：<br>（1）把layout/_partial/post/nav.ejs，layout/_partial/sidebar-toc.ejs里的&amp;&amp; post.toc删掉；<br>（2）sidebar-toc.ejs把collapse这个样式去掉可以了，这个样式写了一个display:none!important; 不知道为什么要隐藏Mark。<br>这里只使用了（1）就正常生成了文章目录(TOC,Table of contents)。</p><h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p>[1] <a href="https://github.com/cofess/hexo-theme-pure/issues/33">在内容页面，如何显示文章内容结构 · Issue #33 · cofess/hexo-theme-pure</a><br>[2] <a href="https://github.com/cofess/hexo-theme-pure/issues/125">开启了toc但还是不显示文章目录 · Issue #125 · cofess/hexo-theme-pure</a><br>[3] <a href="https://github.com/cofess/hexo-theme-pure/issues/">Issues · cofess/hexo-theme-pure</a></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;小白一枚，一直想搭建一个自己保存自己学习工作生活记录的博客。得意于互联网的蓬勃发展，提供各种学习资料，如愿搭建了一个。&lt;/p&gt;
-&lt;h2 id=&quot;文章目录生成&quot;&gt;&lt;a href=&quot;#文章目录生成&quot; class=&quot;headerlink&quot; title=&quot;文章目录生成&quot;&gt;&lt;/a&gt;文</summary>
       
     
     
