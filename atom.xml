@@ -6,7 +6,7 @@
   <link href="http://raolixiang-up.github.io/atom.xml" rel="self"/>
   
   <link href="http://raolixiang-up.github.io/"/>
-  <updated>2022-12-31T15:09:02.913Z</updated>
+  <updated>2022-12-31T15:15:34.687Z</updated>
   <id>http://raolixiang-up.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>机器学习002</title>
+    <title>机器学习002-决定系数等指标</title>
     <link href="http://raolixiang-up.github.io/2022/12/31/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0002/"/>
     <id>http://raolixiang-up.github.io/2022/12/31/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0002/</id>
     <published>2022-12-31T14:53:34.000Z</published>
-    <updated>2022-12-31T15:09:02.913Z</updated>
+    <updated>2022-12-31T15:15:34.687Z</updated>
     
     <content type="html"><![CDATA[<p>机器学习中MSE(均方误差)、 RMSE(均方根误差)、 MAE(平均绝对误差)、R2(决定系数)是评判机器学习获得的模型优劣非常重要的指标，这些指标的定义可以百度或者谷歌，这里不赘述了。<br>这里使用python脚本，需要一个具有两列数据的csv文件，一列为真实值，一列为机器学习预测值。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#导入相应的函数库</span></span><br><span class="line">from sklearn import datasets</span><br><span class="line">from sklearn.model_selection import train_test_split</span><br><span class="line">from sklearn.ensemble import RandomForestRegressor</span><br><span class="line">import numpy as np</span><br><span class="line">import pandas as pd</span><br><span class="line">from math import sqrt</span><br><span class="line">from sklearn.metrics import mean_absolute_error</span><br><span class="line">from sklearn.metrics import mean_squared_error</span><br><span class="line">from sklearn.metrics import r2_score</span><br><span class="line"><span class="comment">#加载数据</span></span><br><span class="line">file_y = pd.read_csv(<span class="string">&#x27;y-c44-3-q2-no.csv&#x27;</span>)   <span class="comment"># csv文件，文件中有两列数，一列是真实值，一列是机器学习预测值</span></span><br><span class="line"><span class="comment"># print(file_y)</span></span><br><span class="line">data1  = file_y[<span class="string">&#x27;y_true&#x27;</span>]                   <span class="comment"># 真实值那列的抬头</span></span><br><span class="line">y_true = data1.values.tolist()</span><br><span class="line">data2  = file_y[<span class="string">&#x27;y_pred&#x27;</span>]                   <span class="comment"># 机器学习预测值那列的抬头</span></span><br><span class="line">y_pred = data2.values.tolist()</span><br><span class="line"><span class="comment"># print(y_true)</span></span><br><span class="line"><span class="comment"># print(y_pred)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用sklearn调用衡量线性回归的MSE 、 RMSE、 MAE、r2</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;mean_absolute_error:&quot;</span>, mean_absolute_error(y_true, y_pred))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;mean_squared_error:&quot;</span>, mean_squared_error(y_true, y_pred))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;rmse:&quot;</span>, sqrt(mean_squared_error(y_true, y_pred)))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;r2 score:&quot;</span>, r2_score(y_true, y_pred))</span><br></pre></td></tr></table></figure><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p>[1] <a href="https://blog.csdn.net/z15818264727/article/details/122638802">Python计算统计分析MSE 、 RMSE、 MAE、r2_zNULLT的博客-CSDN博客_python rmse</a><br>[2] <a href="https://blog.csdn.net/weixin_43245453/article/details/90144226">从csv文件读取列数据保存在列表中_春风若是你的博客-CSDN博客</a></p>]]></content>
     
