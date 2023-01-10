@@ -6,7 +6,7 @@
   <link href="http://raolixiang-up.github.io/atom.xml" rel="self"/>
   
   <link href="http://raolixiang-up.github.io/"/>
-  <updated>2023-01-01T14:58:59.482Z</updated>
+  <updated>2023-01-10T15:09:15.443Z</updated>
   <id>http://raolixiang-up.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>文献001-预印本网站</title>
+    <link href="http://raolixiang-up.github.io/2023/01/10/%E6%96%87%E7%8C%AE001-%E9%A2%84%E5%8D%B0%E6%9C%AC%E7%BD%91%E7%AB%99/"/>
+    <id>http://raolixiang-up.github.io/2023/01/10/%E6%96%87%E7%8C%AE001-%E9%A2%84%E5%8D%B0%E6%9C%AC%E7%BD%91%E7%AB%99/</id>
+    <published>2023-01-10T14:49:29.000Z</published>
+    <updated>2023-01-10T15:09:15.443Z</updated>
+    
+    <content type="html"><![CDATA[<p>这里总结一下预印本和各种免费资源的网站吧，方便以后搜索最新文献。<br>[1] <a href="https://arxiv.org/">arXiv.org e-Print archive</a>: 数学、物理学、计算机等。<br>[2] <a href="http://www.chinaxiv.org/home.htm">ChinaXiv.org 中国科学院科技论文预发布平台</a>: 国产网站，接收中英文文章，比较综合。<br>[3] <a href="https://www.biorxiv.org/">bioRxiv.org - the preprint server for Biology</a>: 仅针对生物学领域。<br>[4] <a href="https://f1000.com/">Open Research Publishing - Advancing Knowledge - F1000</a>:涵盖所有生命科学领域的。<br>[5] <a href="https://figshare.com/">figshare - credit for all your research</a>: 图表、多媒体、海报、论文（包括预印本）和多文件、数据集等。<br>[6] <a href="https://peerj.com/preprints/">PeerJ - Search</a>: 涵盖了生物科学、医学和健康科学的领域。<br>[7] <a href="https://zenodo.org/">Zenodo - Research. Shared.</a>: 刊物、演示文稿、论文集、项目、图像、软件（包括与 GitHub 的集成）以及所有语言的数据。<br>[8] <a href="https://www.ssrn.com/index.cfm/en/">Home :: SSRN</a>:偏社会科学领域。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;这里总结一下预印本和各种免费资源的网站吧，方便以后搜索最新文献。&lt;br&gt;[1] &lt;a href=&quot;https://arxiv.org/&quot;&gt;arXiv.org e-Print archive&lt;/a&gt;: 数学、物理学、计算机等。&lt;br&gt;[2] &lt;a href=&quot;http://w</summary>
+      
+    
+    
+    
+    <category term="文献" scheme="http://raolixiang-up.github.io/categories/%E6%96%87%E7%8C%AE/"/>
+    
+    
+    <category term="预印本" scheme="http://raolixiang-up.github.io/tags/%E9%A2%84%E5%8D%B0%E6%9C%AC/"/>
+    
+  </entry>
   
   <entry>
     <title>ABINIT001-初步学习</title>
@@ -486,31 +510,6 @@
     
     
     <category term="hexo" scheme="http://raolixiang-up.github.io/tags/hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>机器学习001</title>
-    <link href="http://raolixiang-up.github.io/2022/04/29/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0001/"/>
-    <id>http://raolixiang-up.github.io/2022/04/29/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0001/</id>
-    <published>2022-04-28T21:43:56.000Z</published>
-    <updated>2022-04-29T14:53:23.261Z</updated>
-    
-    <content type="html"><![CDATA[<p>机器学习的基础数据挖掘</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;机器学习的基础数据挖掘&lt;/p&gt;
-</summary>
-      
-    
-    
-    
-    <category term="机器学习" scheme="http://raolixiang-up.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="ML" scheme="http://raolixiang-up.github.io/tags/ML/"/>
     
   </entry>
   
